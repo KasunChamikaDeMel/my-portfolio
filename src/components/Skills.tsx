@@ -1,32 +1,45 @@
-import React from 'react';
 import { CodeIcon, LayoutIcon, ServerIcon, DatabaseIcon, PenToolIcon, GitBranchIcon } from 'lucide-react';
 import MovingGridBackground from './animations/MovingGridBackground';
+
 const Skills = () => {
-  const skillCategories = [{
+  const skillCategories = [
+  
+  {
     title: 'Frontend Development',
     icon: <LayoutIcon size={28} className="text-blue-600" />,
-    skills: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Vue.js', 'Tailwind CSS', 'SASS']
-  }, {
+    skills: ['React.js', 'Next.js', 'Vite', 'HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS', 'AOS / Framer Motion', 'REST API integration']
+  }, 
+  
+  {
     title: 'Backend Development',
     icon: <ServerIcon size={28} className="text-blue-600" />,
-    skills: ['Node.js', 'Express', 'PHP', 'Java', 'Python', 'RESTful APIs', 'GraphQL']
-  }, {
+    skills: ['Node.js', 'PHP', 'Java', 'Python', 'RESTful APIs', 'MVC Architecture']
+  }, 
+  
+  {
     title: 'Database',
     icon: <DatabaseIcon size={28} className="text-blue-600" />,
-    skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Firebase', 'Redis']
-  }, {
+    skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Firebase']
+  }, 
+  
+  {
     title: 'Design',
     icon: <PenToolIcon size={28} className="text-blue-600" />,
-    skills: ['UI/UX Design', 'Figma', 'Adobe XD', 'Responsive Design', 'Wireframing']
-  }, {
+    skills: ['UI/UX Design', 'Figma', 'Canva', 'Adobe Photoshop','Adobe XD', 'Responsive Design', 'Wireframing', 'Prototyping', 'Brand and Interface Consistency']
+  }, 
+  
+  {
     title: 'Programming',
     icon: <CodeIcon size={28} className="text-blue-600" />,
-    skills: ['TypeScript', 'Java', 'Python', 'C++', 'OOP', 'Data Structures', 'Algorithms']
-  }, {
+    skills: ['Python', 'TypeScript', 'JavaScript', 'Java (Basics)', 'C / C++', 'OOP', 'Data Structures', 'Dart (Flutter Basics)']
+  }, 
+  
+  {
     title: 'Tools & Others',
     icon: <GitBranchIcon size={28} className="text-blue-600" />,
-    skills: ['Git', 'Docker', 'CI/CD', 'AWS', 'Agile', 'JIRA', 'Testing']
+    skills: ['GitHub', 'Git', 'VS Code', 'Docker (Basics)', 'CI/CD', 'AWS', 'Agile', 'JIRA', 'Debugging', 'Testing']
   }];
+
   return <section id="skills" className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <MovingGridBackground />
