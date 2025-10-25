@@ -13,12 +13,12 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
 
           <div data-aos="fade-right" data-aos-duration="1000">
             <div className="relative">
-              <div className="w-96 h-120 bg-white rounded-lg overflow-hidden shadow-md transition-all hover:shadow-xl">
-                <img src="/images/pro.png" alt="Kasun Chamika - Software Engineer" className="w-full h-full object-cover transition-transform hover:scale-105 duration-700" />
+              <div className="w-120 h-120 bg-white rounded-lg overflow-hidden shadow-xl transition-all hover:shadow-2xl">
+                <img src="/images/pro2.png" alt="Kasun Chamika - Software Engineer" className="w-full h-full object-cover transition-transform hover:scale-105 duration-700" />
               </div>
             </div>
           </div>
