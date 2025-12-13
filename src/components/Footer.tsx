@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Facebook, Instagram, ArrowUp, Heart } from 'lucide-react';
+import { Github, Linkedin, Facebook, Instagram, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {

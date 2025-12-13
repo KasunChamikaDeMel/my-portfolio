@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 const GradientBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
@@ -42,7 +42,6 @@ const GradientBackground = () => {
       const colorIndex1 = Math.floor(time) % colors.length;
       const colorIndex2 = (colorIndex1 + 1) % colors.length;
       const colorIndex3 = (colorIndex1 + 2) % colors.length;
-      const t = time % 1;
       const color1 = colors[colorIndex1];
       const color2 = colors[colorIndex2];
       const color3 = colors[colorIndex3];
