@@ -60,12 +60,13 @@ const Projects = () => {
     },
     {
       title: 'NIC Decoder App',
-      category: 'app',
+      category: ['app', 'design'],
       image: '/images/3.png',
       description: 'A mobile app to decode National Identity Cards (NIC) in Sri Lanka.',
       technologies: ['C++, dart', 'Flutter'],
       liveLink: '#',
       githubLink: 'https://github.com/KasunChamikaDeMel/nic_decorder_app0',
+      figmaLink: 'https://www.figma.com/design/fVKqwgu45U0Dd1R2LJpch9/Ghost-Nic-Decoder?node-id=0-1&p=f&t=tqamelUCrhech6uL-0',
     },
     {
       title: 'Network Intrusion Detection System',

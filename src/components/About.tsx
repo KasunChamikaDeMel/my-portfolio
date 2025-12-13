@@ -121,8 +121,8 @@ const About = () => {
               </motion.a>
 
               <motion.a
-                href="public\KasunChamikaDeMel-CV-FullStack.pdf"
-                download
+                href="/KasunChamikaDeMel-CV-FullStack.pdf"
+                download="KasunChamikaDeMel-CV-FullStack.pdf"
                 className="group px-8 py-4 glass-dark rounded-xl font-medium border border-primary-500/30 hover:border-primary-500/60 transition-all duration-300 flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
