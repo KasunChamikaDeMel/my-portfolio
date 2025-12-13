@@ -1,7 +1,17 @@
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { useState } from 'react';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
   const contactInfo = [
     {
       icon: MapPin,
@@ -22,6 +32,52 @@ const Contact = () => {
       link: 'tel:+94703274701',
     },
   ];
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'f90fb044-e241-44f3-bfc8-ef86d722ad2e',
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: 'Portfolio Contact Form',
+          to_email: 'chamikakasun33635@gmail.com',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+        setErrorMessage('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage('An error occurred. Please try again later.');
+      console.error('Error:', error);
+    }
+  };
 
   return (
     <section id="contact" className="relative py-32 overflow-hidden">
@@ -124,7 +180,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <form className="glass-dark rounded-2xl p-8 border border-primary-500/20 space-y-6">
+            <form onSubmit={handleSubmit} className="glass-dark rounded-2xl p-8 border border-primary-500/20 space-y-6">
               <h3 className="text-2xl font-display font-bold mb-6 text-dark-100">
                 Send Me a Message
               </h3>
@@ -136,8 +192,11 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="Enter your name"
-                  className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 transition-all"
+                  className="w-full px-4 py-3 bg-gray-800 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 transition-all"
                 />
               </div>
 
@@ -148,8 +207,11 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   placeholder="youremail@gmail.com"
-                  className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 transition-all"
+                  className="w-full px-4 py-3 bg-gray-800 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 transition-all"
                 />
               </div>
 
@@ -160,8 +222,11 @@ const Contact = () => {
                 <input
                   type="text"
                   id="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
                   placeholder="Project Inquiry"
-                  className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 transition-all"
+                  className="w-full px-4 py-3 bg-gray-800 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 transition-all"
                 />
               </div>
 
@@ -172,19 +237,47 @@ const Contact = () => {
                 <textarea
                   id="message"
                   rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   placeholder="Type your message here..."
-                  className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 resize-none transition-all"
+                  className="w-full px-4 py-3 bg-gray-800 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 resize-none transition-all"
                 />
               </div>
 
+              {status === 'success' && (
+                <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-xl text-green-400 text-center">
+                  Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-center">
+                  {errorMessage}
+                </div>
+              )}
+
               <motion.button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-medium transition-all duration-300"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                disabled={status === 'loading'}
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary-500 hover:bg-primary-600 disabled:bg-primary-500/50 disabled:cursor-not-allowed text-white rounded-xl font-medium transition-all duration-300"
+                whileHover={status !== 'loading' ? { scale: 1.02 } : {}}
+                whileTap={status !== 'loading' ? { scale: 0.98 } : {}}
               >
-                <Send className="w-4 h-4" />
-                Send Message
+                {status === 'loading' ? (
+                  <>
+                    <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" />
+                    Send Message
+                  </>
+                )}
               </motion.button>
             </form>
           </motion.div>
