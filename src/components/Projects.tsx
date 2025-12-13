@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
-import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink, Github, ChevronLeft, ChevronRight, Figma} from 'lucide-react';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -11,29 +11,50 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'Construction Company Website',
+      category: ['web', 'design'],
+      image: '/images/2.png',
+      description: 'Website for Shantharathna Constructions (Pvt) Ltd, showcasing their projects and services.',
+      technologies: ['React', 'Next.js', 'Tailwind CSS', 'Typescript'],
+      liveLink: 'https://shantharathnaconstructions.vercel.app',
+      githubLink: 'https://github.com/KasunChamikaDeMel/shantharathna-constructions',
+      figmaLink: 'https://www.figma.com/design/0toHgnUa7e5h2tmvLCYI9W/Shantharathna-Construction?node-id=0-1&p=f&t=E1dozlKZnTNgwKOK-0',
+    },
+    {
+      title: 'Sri Lankan Travel Blogs',
+      category: ['web', 'design'],
+      image: '/images/5.png',
+      description: 'Website for Sri Lankan Travel Blogs, featuring popular destinations and travel tips.',
+      technologies: ['React', 'Next.js', 'Tailwind CSS', 'Typescript'],
+      liveLink: 'https://srilanka-travel-blogs.vercel.app',
+      githubLink: 'https://github.com/KasunChamikaDeMel/srilanka-travel-blogs',
+      figmaLink: '',
+    },
+    {
+      title: 'Moodmate',
+      category: ['app', 'design'],
+      image: '/images/6.png',
+      description: 'A mental health app designed to track mood and provide real-time support.',
+      technologies: ['Python', 'Machine Learning', 'Flask', 'Electron.js'],
+      liveLink: '#',
+      githubLink: 'https://github.com/KasunChamikaDeMel/Moodmate',
+      figmaLink: 'https://www.figma.com/design/QmZ9sfsPXsxYZgQRv9pNpp/Moodmate-wireframe?node-id=0-1&p=f&t=bFkMfwe7Wm1pgf1C-0',
+    },
+    {
       title: 'Portfolio Website',
       category: 'web',
       image: '/images/1.png',
       description: 'A portfolio website for Mr. Manura Aluthge, CEO of Sun and Moon (Pvt) Ltd.',
-      technologies: ['React', 'Next.js'],
+      technologies: ['React', 'Next.js', 'Tailwind CSS', 'Typescript'],
       liveLink: 'https://manuraaluthge.vercel.app',
       githubLink: 'https://github.com/KasunChamikaDeMel/portfolio-9',
-    },
-    {
-      title: 'Construction Company Website',
-      category: 'web',
-      image: '/images/2.png',
-      description: 'Website for Shantharathna Constructions (Pvt) Ltd, showcasing their projects and services.',
-      technologies: ['React', 'Next.js'],
-      liveLink: 'https://shantharathnaconstructions.vercel.app',
-      githubLink: 'https://github.com/KasunChamikaDeMel/shantharathna-constructions',
     },
     {
       title: 'My Portfolio',
       category: 'web',
       image: '/images/4.png',
       description: 'My personal portfolio website, showcasing my skills, projects, and experiences.',
-      technologies: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS'],
+      technologies: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Framer-Motion'],
       liveLink: 'https://kasunchamikademel.vercel.app',
       githubLink: 'https://github.com/KasunChamikaDeMel/my-portfolio',
     },
@@ -42,35 +63,29 @@ const Projects = () => {
       category: 'app',
       image: '/images/3.png',
       description: 'A mobile app to decode National Identity Cards (NIC) in Sri Lanka.',
-      technologies: ['C++'],
+      technologies: ['C++, dart', 'Flutter'],
       liveLink: '#',
       githubLink: 'https://github.com/KasunChamikaDeMel/nic_decorder_app0',
     },
     {
       title: 'Network Intrusion Detection System',
       category: 'app',
-      image: '',
+      image: '/images/7.png',
       description: 'A system to detect and prevent unauthorized access to computer networks.',
       technologies: ['Python', 'Flask', 'Machine Learning', 'HTML', 'CSS'],
       liveLink: '#',
       githubLink: 'https://github.com/KasunChamikaDeMel/Network-Intrusion-System-1',
     },
-    {
-      title: 'Moodmate',
-      category: 'app',
-      image: '',
-      description: 'A mental health app designed to track mood and provide real-time support.',
-      technologies: ['Python', 'Machine Learning'],
-      liveLink: '#',
-      githubLink: 'https://github.com/KasunChamikaDeMel/Moodmate',
-    },
+    
   ];
 
-  const filteredProjects = filter === 'all' ? projects : projects.filter(p => p.category === filter);
+  const filteredProjects = filter === 'all' ? projects : projects.filter(p => {
+        const categories = Array.isArray(p.category) ? p.category : [p.category];
+        return categories.includes(filter);
+      });
 
-  // Duplicate projects for seamless infinite scroll
   const duplicatedProjects = [...filteredProjects, ...filteredProjects, ...filteredProjects];
-  const cardWidth = 432; // 400px width + 32px gap
+  const cardWidth = 432;
   const totalWidth = filteredProjects.length * cardWidth;
 
   const filters = [
@@ -80,10 +95,9 @@ const Projects = () => {
     { value: 'design', label: 'Design' },
   ];
 
-  // Auto-scroll animation
   useAnimationFrame((_, delta) => {
     if (!isDragging && !isPaused) {
-      scrollRef.current -= delta * 0.05; // Scroll speed
+      scrollRef.current -= delta * 0.05;
       if (scrollRef.current <= -totalWidth) {
         scrollRef.current = 0;
       }
@@ -263,6 +277,15 @@ const Projects = () => {
                         <Github className="w-4 h-4 group-hover/link:rotate-12 transition-transform" />
                         <span className="text-sm font-medium">Source</span>
                       </a>
+                      <a
+                            href={project.figmaLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors group/link"
+                        >
+                            <Figma className="w-4 h-4 group-hover/link:rotate-12 transition-transform" />
+                            <span className="text-sm font-medium">Design</span>
+                        </a>
                     </div>
                   </div>
                 </motion.div>
