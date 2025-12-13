@@ -1,133 +1,193 @@
-import { MapPinIcon, PhoneIcon, MailIcon, SendIcon } from 'lucide-react';
-import WaveBackground from './animations/WaveBackground';
+import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail, Send } from 'lucide-react';
 
 const Contact = () => {
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: 'Location',
+      value: 'Padukka, Sri Lanka',
+      link: 'https://www.google.com/maps/place/Padukka,+Sri+Lanka',
+    },
+    {
+      icon: Mail,
+      title: 'Email',
+      value: 'chamikakasun33635@gmail.com',
+      link: 'mailto:chamikakasun33635@gmail.com',
+    },
+    {
+      icon: Phone,
+      title: 'Phone',
+      value: '+94 70 327 4701',
+      link: 'tel:+94703274701',
+    },
+  ];
+
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <WaveBackground />
+    <section id="contact" className="relative py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/50 to-dark-950" />
+
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary-500/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/2 right-1/4 w-96 h-96 bg-primary-600/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Title */}
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl font-bold mb-2 text-gray-900">Get In Touch</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Have a project in mind? Let's collaborate and create something amazing together.
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            Get In <span className="gradient-text">Touch</span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto mb-6" />
+          <p className="text-lg text-dark-400 max-w-2xl mx-auto">
+            Have a project in mind? Let's collaborate and create something amazing together
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Left Info Block */}
-          <div data-aos="fade-right" data-aos-duration="1000">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Contact Information</h3>
-            <div className="space-y-6 mb-8">
-
-              {/* Location */}
-              <a
-                href="https://www.google.com/maps/place/Padukka,+Sri+Lanka"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start group"
-                data-aos="zoom-in"
-                data-aos-delay="100"
-              >
-                <div className="p-3 bg-blue-100 rounded-full mr-4 transition-all group-hover:bg-blue-200 group-hover:scale-110">
-                  <MapPinIcon size={20} className="text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">Location</h4>
-                  <p className="text-gray-700 group-hover:underline">Padukka, Sri Lanka</p>
-                </div>
-              </a>
-
-              {/* Email */}
-              <a
-                href="mailto:chamikakasun33635@gmail.com"
-                className="flex items-start group"
-                data-aos="zoom-in"
-                data-aos-delay="200"
-              >
-                <div className="p-3 bg-blue-100 rounded-full mr-4 transition-all group-hover:bg-blue-200 group-hover:scale-110">
-                  <MailIcon size={20} className="text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">Email</h4>
-                  <p className="text-gray-700 group-hover:underline">chamikakasun33635@gmail.com</p>
-                </div>
-              </a>
-
-              {/* Phone */}
-              <a
-                href="tel:+94703274701"
-                className="flex items-start group"
-                data-aos="zoom-in"
-                data-aos-delay="300"
-              >
-                <div className="p-3 bg-blue-100 rounded-full mr-4 transition-all group-hover:bg-blue-200 group-hover:scale-110">
-                  <PhoneIcon size={20} className="text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">Phone</h4>
-                  <p className="text-gray-700 group-hover:underline">+94 70 327 4701</p>
-                </div>
-              </a>
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div>
+              <h3 className="text-2xl font-display font-bold mb-6 text-dark-100">
+                Contact Information
+              </h3>
+              <div className="space-y-4">
+                {contactInfo.map((info, index) => {
+                  const Icon = info.icon;
+                  return (
+                    <motion.a
+                      key={info.title}
+                      href={info.link}
+                      target={info.link.startsWith('http') ? '_blank' : undefined}
+                      rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ x: 10 }}
+                      className="flex items-start gap-4 p-4 glass-dark rounded-xl border border-primary-500/20 hover:border-primary-500/40 transition-all duration-300 group"
+                    >
+                      <div className="p-3 bg-primary-500/10 rounded-lg group-hover:bg-primary-500/20 transition-colors">
+                        <Icon className="w-5 h-5 text-primary-400" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-dark-200 mb-1">{info.title}</h4>
+                        <p className="text-dark-400 group-hover:text-primary-400 transition-colors">
+                          {info.value}
+                        </p>
+                      </div>
+                    </motion.a>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Message Shortcut Box */}
-            <div className="bg-white p-6 rounded-lg shadow-lg transform transition-all hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm bg-opacity-90" data-aos="fade-up" data-aos-delay="400">
-              <h4 className="font-bold text-lg mb-4 text-gray-900">Let's discuss your project</h4>
-              <p className="text-gray-700 mb-4">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="glass-dark rounded-2xl p-8 border border-primary-500/20"
+            >
+              <h4 className="font-display font-bold text-xl mb-4 text-dark-100">
+                Let's discuss your project
+              </h4>
+              <p className="text-dark-400 mb-6 leading-relaxed">
+                I'm always open to discussing new projects, creative ideas, or opportunities 
+                to be part of your vision.
               </p>
-              <a
+              <motion.a
                 href="mailto:chamikakasun33635@gmail.com"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all inline-flex items-center hover:shadow-lg group"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-medium transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <MailIcon size={16} className="mr-2 transition-transform group-hover:scale-110" />
+                <Mail className="w-4 h-4" />
                 Send me an email
-              </a>
-            </div>
-          </div>
+              </motion.a>
+            </motion.div>
+          </motion.div>
 
-          {/* Right Contact Form */}
-          <div data-aos="fade-left" data-aos-duration="1000">
-            <form className="bg-white p-8 rounded-lg shadow-lg transform transition-all hover:shadow-xl backdrop-blur-sm bg-opacity-90">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Send Me a Message</h3>
-              <div className="mb-6" data-aos="fade-up" data-aos-delay="100">
-                <label htmlFor="name" className="block text-gray-800 font-medium mb-2">Name</label>
-                <input type="text" id="name" placeholder="Enter your name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <form className="glass-dark rounded-2xl p-8 border border-primary-500/20 space-y-6">
+              <h3 className="text-2xl font-display font-bold mb-6 text-dark-100">
+                Send Me a Message
+              </h3>
+
+              <div>
+                <label htmlFor="name" className="block text-dark-300 font-medium mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Enter your name"
+                  className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 transition-all"
                 />
               </div>
-              <div className="mb-6" data-aos="fade-up" data-aos-delay="200">
-                <label htmlFor="email" className="block text-gray-800 font-medium mb-2">Email</label>
-                <input type="email" id="email" placeholder="youremail@gmail.com"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+
+              <div>
+                <label htmlFor="email" className="block text-dark-300 font-medium mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="youremail@gmail.com"
+                  className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 transition-all"
                 />
               </div>
-              <div className="mb-6" data-aos="fade-up" data-aos-delay="300">
-                <label htmlFor="subject" className="block text-gray-800 font-medium mb-2">Subject</label>
-                <input type="text" id="subject" placeholder="Project Inquiry"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all"
+
+              <div>
+                <label htmlFor="subject" className="block text-dark-300 font-medium mb-2">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="Project Inquiry"
+                  className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 transition-all"
                 />
               </div>
-              <div className="mb-6" data-aos="fade-up" data-aos-delay="400">
-                <label htmlFor="message" className="block text-gray-800 font-medium mb-2">Message</label>
-                <textarea id="message" rows={5} placeholder="Type your message here..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent resize-none transition-all"
-                ></textarea>
+
+              <div>
+                <label htmlFor="message" className="block text-dark-300 font-medium mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={5}
+                  placeholder="Type your message here..."
+                  className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-dark-100 placeholder-dark-500 resize-none transition-all"
+                />
               </div>
-              <button type="submit"
-                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all inline-flex items-center hover:shadow-lg hover:-translate-y-1 group"
-                data-aos="fade-up" data-aos-delay="500"
+
+              <motion.button
+                type="submit"
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-medium transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <SendIcon size={16} className="mr-2 transition-transform group-hover:translate-x-1" />
+                <Send className="w-4 h-4" />
                 Send Message
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

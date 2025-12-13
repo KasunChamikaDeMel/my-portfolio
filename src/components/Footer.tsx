@@ -1,73 +1,163 @@
-import { GithubIcon, LinkedinIcon, FacebookIcon, InstagramIcon, ArrowUpIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Github, Linkedin, Facebook, Instagram, ArrowUp, Heart } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
+  const socialLinks = [
+    { icon: Github, href: 'https://github.com/KasunChamikaDeMel', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/kasun-chamika-11a88a281/', label: 'LinkedIn' },
+    { icon: Facebook, href: 'https://www.facebook.com/chamika.kasundemel', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/ka_su_n.99/', label: 'Instagram' },
+  ];
+
+  const quickLinks = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
+  ];
+
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          
-          {/* Left Side Info */}
-          <div className="mb-8 md:mb-0" data-aos="fade-right">
-            <h2 className="text-2xl font-bold mb-2">
-              Kasun Chamika{' '}
-              <span className="text-blue-400 hover:text-blue-300 transition-colors">
-                De Mel
-              </span>
+    <footer className="relative bg-dark-950 border-t border-dark-800 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-dark-950/50" />
+
+      <div className="container mx-auto px-6 py-12 relative z-10">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            <h2 className="text-2xl font-display font-bold">
+              <span className="gradient-text">Kasun Chamika</span>
+              <span className="text-dark-400 ml-2">De Mel</span>
             </h2>
-            <p className="text-gray-400">
-              Creating innovative digital solutions with precision and passion.
+            <p className="text-dark-500 leading-relaxed">
+              Creating innovative digital solutions with precision and passion. 
+              Let's build something extraordinary together.
             </p>
-          </div>
-
-          {/* Right Side Social + Scroll */}
-          <div className="flex flex-col items-center md:items-end" data-aos="fade-left">
-            
-            {/* Social Icons */}
-            <div className="flex space-x-4 mb-4">
-              <a href="https://github.com/KasunChamikaDeMel" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-all hover:scale-110">
-                <GithubIcon size={20} className="transform transition-transform hover:rotate-12" />
-              </a>
-              <a href="https://www.linkedin.com/in/kasun-chamika-11a88a281/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-all hover:scale-110">
-                <LinkedinIcon size={20} className="transform transition-transform hover:rotate-12" />
-              </a>
-              <a href="https://www.facebook.com/chamika.kasundemel" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-all hover:scale-110">
-                <FacebookIcon size={20} className="transform transition-transform hover:rotate-12" />
-              </a>
-              <a href="https://www.instagram.com/ka_su_n.99/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-all hover:scale-110">
-                <InstagramIcon size={20} className="transform transition-transform hover:rotate-12" />
-              </a>
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ y: -5 }}
+                    className="p-2 glass-dark rounded-lg hover:bg-primary-500/10 border border-transparent hover:border-primary-500/30 transition-all duration-300"
+                    aria-label={social.label}
+                  >
+                    <Icon className="w-5 h-5 text-dark-400 hover:text-primary-400 transition-colors" />
+                  </motion.a>
+                );
+              })}
             </div>
+          </motion.div>
 
-            {/* Back to Top Button */}
-            <button onClick={scrollToTop} className="flex items-center text-gray-400 hover:text-blue-400 transition-all group">
-              <ArrowUpIcon size={16} className="mr-2 transform group-hover:-translate-y-1 transition-transform" />
-              Back to top
-            </button>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="space-y-4"
+          >
+            <h3 className="text-lg font-display font-semibold text-dark-200">Quick Links</h3>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-dark-500 hover:text-primary-400 transition-colors duration-300 inline-block hover:translate-x-2 transform"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="space-y-4"
+          >
+            <h3 className="text-lg font-display font-semibold text-dark-200">Get In Touch</h3>
+            <div className="space-y-2 text-dark-500">
+              <p>Padukka, Sri Lanka</p>
+              <p>
+                <a
+                  href="mailto:chamikakasun33635@gmail.com"
+                  className="hover:text-primary-400 transition-colors"
+                >
+                  chamikakasun33635@gmail.com
+                </a>
+              </p>
+              <p>
+                <a href="tel:+94703274701" className="hover:text-primary-400 transition-colors">
+                  +94 70 327 4701
+                </a>
+              </p>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Bottom Links */}
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0 hover:text-gray-400 transition-colors">
-            &copy; {new Date().getFullYear()} Kasun Chamika. All rights reserved.
-          </p>
-          <div className="flex space-x-6">
-            <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors text-sm relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-400 after:transition-all">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-gray-500 hover:text-blue-400 transition-colors text-sm relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-400 after:transition-all">
-              Terms of Service
-            </a>
+        <div className="border-t border-dark-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-dark-500 text-sm flex items-center gap-2"
+            >
+              © {new Date().getFullYear()} Kasun Chamika De Mel. All the rights reserved.
+            </motion.p>
+
+            <div className="flex items-center gap-6">
+              <a
+                href="#"
+                className="text-dark-500 hover:text-primary-400 transition-colors text-sm"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#"
+                className="text-dark-500 hover:text-primary-400 transition-colors text-sm"
+              >
+                Terms of Service
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
+      <motion.button
+        onClick={scrollToTop}
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.1, y: -5 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-8 right-8 p-4 bg-primary-500 hover:bg-primary-600 text-white rounded-full shadow-lg shadow-primary-500/30 transition-all duration-300 z-50"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp className="w-5 h-5" />
+      </motion.button>
     </footer>
   );
 };
