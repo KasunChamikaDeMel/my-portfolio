@@ -91,12 +91,12 @@ const ProjectsSection = () => {
         className="text-center mb-12"
       >
         <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-          <span className="text-slate-900">Project</span> <span className="gradient-text">Deployment</span>
+          <span className="text-slate-950">Project</span> <span className="gradient-text">Deployment</span>
         </h2>
-        <p className="text-slate-600 font-medium">Select a module to initiate holographic review.</p>
+        <p className="text-slate-700 font-medium">Select a module to initiate holographic review.</p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-[600px]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 min-h-[600px] lg:h-[600px]">
 
         {/* LEFT COLUMN: The Holographic Stage (Active Project) */}
         <div className="lg:col-span-8 relative z-10 perspective-1000">
@@ -109,7 +109,7 @@ const ProjectsSection = () => {
               transition={{ duration: 0.5 }}
               className="w-full h-full relative"
             >
-              <div className="w-full h-full bg-slate-950/40 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden relative group shadow-xl">
+              <div className="w-full h-full bg-primary-950/25 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden relative group shadow-xl min-h-[400px]">
 
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
@@ -118,7 +118,7 @@ const ProjectsSection = () => {
                     alt={activeProject.title}
                     className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500 group-hover:scale-105 transform"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-950/60 to-transparent pointer-events-none" />
                 </div>
 
                 {/* Content Layer */}
@@ -165,7 +165,7 @@ const ProjectsSection = () => {
                         href={activeProject.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-6 py-3 bg-slate-100/40 border border-slate-300 hover:bg-slate-200/40 backdrop-blur-md text-slate-900 rounded-xl font-bold flex items-center gap-2 transition-all shadow-sm hover:border-blue-400 cursor-pointer pointer-events-auto block"
+                        className="px-6 py-3 bg-white/10 border border-white/20 hover:bg-white/25 backdrop-blur-md text-white rounded-xl font-bold flex items-center gap-2 transition-all shadow-sm hover:border-primary-400 cursor-pointer pointer-events-auto block"
                       >
                         <Github size={20} />
                         Source Code
@@ -194,7 +194,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* RIGHT COLUMN: The Data Dock (List) */}
-        <div className="lg:col-span-4 h-full overflow-y-auto pr-2 custom-scrollbar space-y-3">
+        <div className="lg:col-span-4 h-[300px] lg:h-full overflow-y-auto pr-2 custom-scrollbar space-y-3">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -203,8 +203,8 @@ const ProjectsSection = () => {
               transition={{ delay: index * 0.05 }}
               onClick={() => setActiveIndex(index)}
               className={`group p-4 rounded-xl cursor-pointer transition-all duration-300 border relative overflow-hidden ${activeIndex === index
-                ? 'bg-slate-100/30 border-blue-400 shadow-lg shadow-blue-500/20'
-                : 'bg-slate-100/30 border-slate-300 hover:bg-slate-100/40 hover:border-slate-400'
+                ? 'bg-black/10 border-primary-500 shadow-lg shadow-primary-500/10'
+                : 'bg-black/5 border-black/5 hover:bg-black/10 hover:border-black/10'
                 }`}
             >
               {/* Active Indicator Bar */}
@@ -217,7 +217,7 @@ const ProjectsSection = () => {
 
               <div className="flex items-center justify-between">
                 <div>
-                  <h4 className={`font-bold mb-1 transition-colors ${activeIndex === index ? 'text-blue-700' : 'text-slate-700 group-hover:text-slate-900'}`}>
+                  <h4 className={`font-bold mb-1 transition-colors ${activeIndex === index ? 'text-primary-600' : 'text-slate-800 group-hover:text-black'}`}>
                     {project.title}
                   </h4>
                   <span className="text-xs font-mono text-slate-600 uppercase tracking-wider font-medium">
@@ -225,7 +225,7 @@ const ProjectsSection = () => {
                   </span>
                 </div>
 
-                <div className={`p-2 rounded-lg transition-colors ${activeIndex === index ? 'bg-blue-100/40 text-blue-700' : 'bg-slate-100/40 text-slate-500'}`}>
+                <div className={`p-2 rounded-lg transition-colors ${activeIndex === index ? 'bg-primary-500/25 text-primary-700' : 'bg-black/5 text-slate-600'}`}>
                   {activeIndex === index ? <ArrowRight size={16} /> : <Layers size={16} />}
                 </div>
               </div>

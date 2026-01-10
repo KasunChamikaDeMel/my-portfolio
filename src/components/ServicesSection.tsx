@@ -46,9 +46,9 @@ const ServicesSection = () => {
             <div className="text-center mb-16">
                 <FloatingElement duration={4} yOffset={5}>
                     <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-                        <span className="text-slate-900">Freelance</span> <span className="gradient-text">Services</span>
+                        <span className="text-slate-950">Freelance</span> <span className="gradient-text">Services</span>
                     </h2>
-                    <p className="text-slate-600 max-w-xl mx-auto font-medium">
+                    <p className="text-slate-700 max-w-xl mx-auto font-medium">
                         Comprehensive technical solutions tailored to your digital needs.
                     </p>
                 </FloatingElement>
@@ -64,24 +64,24 @@ const ServicesSection = () => {
                         className="h-full"
                     >
                         <TiltCard className="h-full">
-                            <div className="h-full bg-slate-100/40 backdrop-blur-xl border border-slate-300 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all group flex flex-col items-start relative overflow-hidden">
+                            <div className="h-full bg-slate-100/25 backdrop-blur-xl border border-slate-300 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all group flex flex-col items-start relative overflow-hidden">
 
                                 {/* Background Gradient Blob */}
                                 <div className={`absolute -right-10 -top-10 w-32 h-32 rounded-full blur-[60px] opacity-20 ${service.bg.replace('50', '400')}`} />
 
-                                <div className={`p-3 rounded-2xl ${service.bg.replace('50', '400/40')} border border-slate-200 mb-6 group-hover:scale-110 transition-transform`}>
+                                <div className={`p-3 rounded-2xl ${service.bg.replace('50', '400/25')} border border-slate-200 mb-6 group-hover:scale-110 transition-transform`}>
                                     <service.icon size={28} className={`${service.color} opacity-70`} />
                                 </div>
 
-                                <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                                <p className="text-slate-700 text-sm leading-relaxed mb-6 flex-grow font-medium">
+                                <h3 className="text-xl font-bold text-slate-950 mb-3">{service.title}</h3>
+                                <p className="text-slate-800 text-sm leading-relaxed mb-6 flex-grow font-medium">
                                     {service.description}
                                 </p>
 
                                 <div className="w-full pt-6 border-t border-slate-200">
                                     <div className="flex flex-wrap gap-2">
                                         {service.tools.map(tool => (
-                                            <span key={tool} className="text-xs font-mono py-1 px-2 bg-slate-100/40 border border-slate-300 rounded-md text-slate-700 font-medium">
+                                            <span key={tool} className="text-xs font-mono py-1 px-2 bg-black/5 border border-black/10 rounded-md text-slate-800 font-medium">
                                                 {tool}
                                             </span>
                                         ))}

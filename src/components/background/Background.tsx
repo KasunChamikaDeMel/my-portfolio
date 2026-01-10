@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const GravityBackground: React.FC = () => {
+const Background: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
@@ -19,7 +19,6 @@ const GravityBackground: React.FC = () => {
         const CONNECTION_DISTANCE = 150;
         const MOUSE_RADIUS = 200;
         // Custom Color Theme
-        const BG_COLOR = '#e7bc91';
         const PARTICLE_COLOR = 'rgba(15, 23, 42, 0.9)';
         const LINE_COLOR = 'rgba(255, 255, 255, 0.3)';
 
@@ -105,8 +104,8 @@ const GravityBackground: React.FC = () => {
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Fill Background
-            ctx.fillStyle = BG_COLOR;
+            // Fill Background with Sage Green
+            ctx.fillStyle = '#a8bba3';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             // Draw Particles & Connections
@@ -166,4 +165,4 @@ const GravityBackground: React.FC = () => {
     );
 };
 
-export default GravityBackground;
+export default Background;

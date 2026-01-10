@@ -107,7 +107,7 @@ const AssistantChatbot = () => {
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}
             style={{ top: '20%', transform: 'translateY(-50%)' }}
-            className="fixed right-6 z-[9999] p-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-2xl hover:shadow-blue-500/50 transition-all duration-300"
+            className="fixed right-6 z-[9999] p-4 bg-gradient-to-r from-primary-600 to-green-600 text-white rounded-full shadow-2xl hover:shadow-primary-500/50 transition-all duration-300"
           >
             <MessageCircle className="w-6 h-6" />
           </motion.button>
@@ -122,29 +122,29 @@ const AssistantChatbot = () => {
             exit={{ opacity: 0, x: 100, scale: 0.8 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             style={{ top: '25%', transform: 'translateY(-50%)' }}
-            className="fixed right-6 z-[9999] w-96 h-[600px] bg-gray-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-blue-500/30 flex flex-col overflow-hidden"
+            className="fixed right-6 z-[9999] w-96 h-[600px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-primary-200 flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-500/40 to-purple-600/40 border-b border-blue-500/30">
+            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-primary-500/10 to-green-600/10 border-b border-primary-100">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-500/40 rounded-lg">
-                  <Bot className="w-5 h-5 text-blue-400" />
+                <div className="p-2 bg-primary-100 rounded-lg">
+                  <Bot className="w-5 h-5 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white">AI Assistant</h3>
-                  <p className="text-xs text-gray-400">Powered by Llama 3.3</p>
+                  <h3 className="font-bold text-slate-950">AI Assistant</h3>
+                  <p className="text-xs text-slate-600">Powered by Llama 3.3</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
+                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
               >
-                <X className="w-5 h-5 text-gray-400" />
+                <X className="w-5 h-5 text-slate-500" />
               </button>
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-blue-500/50 scrollbar-track-gray-800">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-blue-400/50 scrollbar-track-gray-100">
               {messages.map((message, index) => (
                 <motion.div
                   key={index}
@@ -154,19 +154,19 @@ const AssistantChatbot = () => {
                   className={`flex gap-3 ${message.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
                 >
                   <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${message.role === 'user'
-                      ? 'bg-blue-500'
-                      : 'bg-purple-500/40 border border-purple-500/30'
+                    ? 'bg-primary-600'
+                    : 'bg-green-100 border border-green-200'
                     }`}>
                     {message.role === 'user' ? (
                       <User className="w-4 h-4 text-white" />
                     ) : (
-                      <Bot className="w-4 h-4 text-purple-400" />
+                      <Bot className="w-4 h-4 text-primary-600" />
                     )}
                   </div>
                   <div className={`flex-1 ${message.role === 'user' ? 'text-right' : 'text-left'}`}>
                     <div className={`inline-block px-4 py-2 rounded-2xl ${message.role === 'user'
-                        ? 'bg-blue-500 text-white'
-                        : 'bg-gray-800 text-gray-100 border border-gray-700'
+                      ? 'bg-primary-600 text-white shadow-sm'
+                      : 'bg-slate-100 text-slate-900 border border-slate-200'
                       }`}>
                       <p className="text-sm whitespace-pre-wrap">{message.content}</p>
                     </div>
@@ -180,11 +180,11 @@ const AssistantChatbot = () => {
                   animate={{ opacity: 1 }}
                   className="flex gap-3"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/40 border border-purple-500/30 flex items-center justify-center">
-                    <Bot className="w-4 h-4 text-purple-400" />
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 border border-green-200 flex items-center justify-center">
+                    <Bot className="w-4 h-4 text-primary-600" />
                   </div>
-                  <div className="bg-gray-800 border border-gray-700 px-4 py-2 rounded-2xl">
-                    <Loader2 className="w-5 h-5 text-purple-400 animate-spin" />
+                  <div className="bg-slate-100 border border-slate-200 px-4 py-2 rounded-2xl">
+                    <Loader2 className="w-5 h-5 text-primary-600 animate-spin" />
                   </div>
                 </motion.div>
               )}
@@ -193,7 +193,7 @@ const AssistantChatbot = () => {
             </div>
 
             {/* Input */}
-            <div className="p-4 border-t border-blue-500/30 bg-gray-900/50">
+            <div className="p-4 border-t border-primary-100 bg-slate-50/50">
               <div className="flex gap-2">
                 <input
                   ref={inputRef}
@@ -203,12 +203,12 @@ const AssistantChatbot = () => {
                   onKeyPress={handleKeyPress}
                   placeholder="Type your message..."
                   disabled={isLoading}
-                  className="flex-1 px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-700 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 px-4 py-3 bg-white text-slate-900 rounded-xl border border-slate-200 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/25 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 />
                 <button
                   onClick={handleSendMessage}
                   disabled={!input.trim() || isLoading}
-                  className="px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl hover:shadow-lg hover:shadow-blue-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
+                  className="px-4 py-3 bg-gradient-to-r from-primary-600 to-green-600 text-white rounded-xl hover:shadow-lg hover:shadow-primary-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
                 >
                   <Send className="w-5 h-5" />
                 </button>
@@ -227,11 +227,11 @@ const AssistantChatbot = () => {
           border-radius: 10px;
         }
         .scrollbar-thin::-webkit-scrollbar-thumb {
-          background: rgba(59, 130, 246, 0.5);
+          background: rgba(137, 166, 127, 0.5);
           border-radius: 10px;
         }
         .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-          background: rgba(59, 130, 246, 0.7);
+          background: rgba(137, 166, 127, 0.7);
         }
       `}</style>
     </>

@@ -10,7 +10,7 @@ import CertificationsSection from './components/CertificationsSection';
 import ContactSection from './components/ContactSection';
 import FooterSection from './components/FooterSection';
 import AssistantChatbot from './components/AssistantChatbot';
-import GravityBackground from './components/background/GravityBackground';
+import Background from './components/background/Background';
 
 const pageTransition = {
   initial: { opacity: 0 },
@@ -28,7 +28,7 @@ export function App() {
     <div className="relative w-full min-h-screen bg-transparent text-slate-900 overflow-x-hidden">
       {/* Background gradient layers */}
       {/* Antigravity Background */}
-      <GravityBackground />
+      <Background />
 
       {/* Main content */}
       <Navigation />

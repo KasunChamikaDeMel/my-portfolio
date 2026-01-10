@@ -57,7 +57,7 @@ const Navigation = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-          className="glass-dark border border-white/10 rounded-full px-6 py-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] backdrop-blur-xl flex items-center gap-1"
+          className="bg-white/40 border border-white/20 rounded-full px-6 py-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] backdrop-blur-xl flex items-center gap-1"
         >
           {navLinks.map((link) => {
             const isActive = activeHash === link.href;
@@ -67,21 +67,21 @@ const Navigation = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
-                className={`relative p-3 rounded-full transition-all duration-300 flex flex-col items-center justify-center group ${isActive ? 'text-white' : 'text-slate-400 hover:text-white'
+                className={`relative p-3 rounded-full transition-all duration-300 flex flex-col items-center justify-center group ${isActive ? 'text-primary-600' : 'text-slate-600 hover:text-black'
                   }`}
                 whileHover={{ scale: 1.2, y: -5 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <div className={`absolute inset-0 bg-primary-500/40 rounded-full blur-md opacity-0 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'group-hover:opacity-50'
+                <div className={`absolute inset-0 bg-primary-500/25 rounded-full blur-md opacity-0 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'group-hover:opacity-50'
                   }`} />
 
-                <Icon className={`w-5 h-5 relative z-10 transition-colors ${isActive ? 'text-primary-400' : 'text-slate-400 group-hover:text-white'
+                <Icon className={`w-5 h-5 relative z-10 transition-colors ${isActive ? 'text-primary-600' : 'text-slate-600 group-hover:text-black'
                   }`} />
 
                 {isActive && (
                   <motion.div
                     layoutId="activeDot"
-                    className="absolute -bottom-1 w-1 h-1 bg-primary-400 rounded-full"
+                    className="absolute -bottom-1 w-1 h-1 bg-primary-600 rounded-full"
                   />
                 )}
 

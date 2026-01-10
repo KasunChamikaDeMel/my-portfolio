@@ -8,7 +8,7 @@ import FloatingElement from './background/FloatingElement';
 
 const SkillsSection = () => {
   const skills = [
-    { name: 'Next.js', icon: Globe, color: 'text-slate-900' },
+    { name: 'Next.js', icon: Globe, color: 'text-white' },
     { name: 'React.js', icon: Atom, color: 'text-blue-500' },
     { name: 'TypeScript', icon: Code, color: 'text-blue-600' },
     { name: 'JavaScript', icon: FileJson, color: 'text-yellow-500' },
@@ -24,9 +24,9 @@ const SkillsSection = () => {
     { name: 'MySQL', icon: Database, color: 'text-blue-800' },
     { name: 'REST API', icon: Share2, color: 'text-indigo-500' },
     { name: 'Machine Learning', icon: Brain, color: 'text-purple-600' },
-    { name: 'Git / Github', icon: Github, color: 'text-slate-900' },
+    { name: 'Git / Github', icon: Github, color: 'text-white' },
     { name: 'Docker', icon: Box, color: 'text-blue-500' },
-    { name: 'Vercel', icon: Triangle, color: 'text-slate-900' },
+    { name: 'Vercel', icon: Triangle, color: 'text-white' },
     { name: 'AWS', icon: Cloud, color: 'text-orange-500' },
     { name: 'Postman', icon: Send, color: 'text-orange-600' },
     { name: 'WordPress', icon: Globe, color: 'text-blue-500' },
@@ -36,19 +36,19 @@ const SkillsSection = () => {
     <section id="skills" className="relative py-24 overflow-hidden min-h-screen flex flex-col items-center justify-center">
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <FloatingElement duration={4} yOffset={5}>
             <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
-              <span className="text-slate-900">Technical</span> <span className="gradient-text">Arsenal</span>
+              <span className="text-slate-950">Technical</span> <span className="gradient-text">Arsenal</span>
             </h2>
-            <p className="text-slate-600 max-w-xl mx-auto font-medium">
+            <p className="text-slate-700 max-w-xl mx-auto font-medium">
               A comprehensive modular breakdown of my multi-layered technical stack.
             </p>
           </FloatingElement>
         </div>
 
         {/* The Gyroscope Container - Main Visual Animation */}
-        <div className="relative w-full max-w-[500px] aspect-square mx-auto perspective-1000 flex items-center justify-center mb-16">
+        <div className="relative w-full max-w-[500px] aspect-square mx-auto perspective-1000 flex items-center justify-center mb-8">
 
           {/* Central Core */}
           <FloatingElement duration={6} yOffset={10} className="relative z-20">
@@ -76,7 +76,7 @@ const SkillsSection = () => {
             <motion.div
               animate={{ rotateX: 360, rotateY: -180, rotateZ: -45 }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="w-[320px] h-[320px] border-2 border-red-500/40 rounded-full absolute preserve-3d"
+              className="w-[320px] h-[320px] border-2 border-red-500/25 rounded-full absolute preserve-3d"
               style={{ transformStyle: 'preserve-3d' }}
             >
               <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-transparent rounded-full border-2 border-red-600 flex items-center justify-center">
@@ -90,7 +90,7 @@ const SkillsSection = () => {
             <motion.div
               animate={{ rotateX: 360, rotateZ: 90 }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="w-[440px] h-[440px] border-2 border-purple-500/40 rounded-full absolute preserve-3d"
+              className="w-[440px] h-[440px] border-2 border-purple-500/25 rounded-full absolute preserve-3d"
               style={{ transformStyle: 'preserve-3d' }}
             >
               <div className="absolute top-0 left-1/4 -translate-y-1/2 w-10 h-10 bg-transparent rounded-full border-2 border-purple-600 flex items-center justify-center">
@@ -108,7 +108,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Wavy Floating Tech Cloud (Matching User Image Reference) - Fully Transparent, no rectangle */}
-        <div className="relative mt-12 w-full overflow-visible py-20 bg-transparent">
+        <div className="relative mt-4 w-full overflow-visible py-10 bg-transparent">
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-16 max-w-7xl mx-auto px-4">
             {skills.map((skill, i) => {
               const Icon = skill.icon;
@@ -138,11 +138,11 @@ const SkillsSection = () => {
                   }}
                   className="flex flex-col items-center group"
                 >
-                  <div className="w-20 h-20 bg-white/40 backdrop-blur-sm rounded-full border-2 border-slate-400 shadow-xl flex items-center justify-center transition-all group-hover:scale-110 group-hover:border-primary-500 group-hover:shadow-primary-500/30 mb-3 relative overflow-hidden">
+                  <div className="w-20 h-20 bg-white/25 backdrop-blur-sm rounded-full border-2 border-slate-400 shadow-xl flex items-center justify-center transition-all group-hover:scale-110 group-hover:border-primary-500 group-hover:shadow-primary-500/30 mb-3 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Icon size={32} className={`${skill.color} transition-transform group-hover:rotate-12 drop-shadow-sm`} />
                   </div>
-                  <span className="text-[10px] font-mono font-bold text-slate-950 tracking-tighter uppercase group-hover:text-blue-700 transition-colors text-center px-1">
+                  <span className="text-[10px] font-mono font-bold text-slate-900 tracking-tighter uppercase group-hover:text-blue-600 transition-colors text-center px-1">
                     {skill.name}
                   </span>
                 </motion.div>

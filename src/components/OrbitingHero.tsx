@@ -14,24 +14,24 @@ const OrbitingHero = () => {
                     <div className="flex-1 text-left max-w-2xl order-2 lg:order-1">
                         <FloatingElement delay={0.2} yOffset={5}>
                             <h1 className="text-6xl md:text-8xl font-display font-bold mb-6 tracking-tight text-slate-900">
-                                <span className="bg-clip-text text-transparent bg-gradient-to-br from-slate-900 via-slate-700 to-slate-500">
+                                <span className="bg-clip-text text-transparent bg-gradient-to-br from-black via-slate-800 to-slate-700">
                                     Kasun Chamika De Mel
                                 </span>
                             </h1>
                         </FloatingElement>
 
                         <FloatingElement delay={0.4} yOffset={5}>
-                            <p className="text-xl md:text-2xl text-slate-700 mb-10 font-semibold  leading-relaxed">
+                            <p className="text-xl md:text-2xl text-slate-800 mb-10 font-semibold  leading-relaxed">
                                 Software Engineer | Full Stack Developer | DevOps / AI / ML Engineer.
                             </p>
                         </FloatingElement>
 
                         <FloatingElement delay={0.6} yOffset={5}>
-                            <div className="flex flex-wrap gap-6 text-slate-600">
+                            <div className="flex flex-wrap gap-6 text-slate-800">
                                 <MagneticButton className="px-10 py-5 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition-all shadow-lg hover:shadow-slate-900/20 flex items-center gap-2">
                                     <a href="#projects">View Work</a>
                                 </MagneticButton>
-                                <MagneticButton className="px-10 py-5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-full font-bold transition-colors backdrop-blur-md shadow-sm">
+                                <MagneticButton className="px-10 py-5 bg-black/5 border border-black/20 hover:bg-black/10 text-black rounded-full font-bold transition-colors backdrop-blur-md shadow-sm">
                                     <a href="#contact">Contact Me</a>
                                 </MagneticButton>
                             </div>
@@ -43,7 +43,7 @@ const OrbitingHero = () => {
                         <div className="relative">
                             {/* Outer Ring */}
                             <motion.div
-                                className="absolute inset-[-60px] border border-primary-500/40 rounded-full"
+                                className="absolute inset-[-60px] border border-primary-500/25 rounded-full"
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                             />
@@ -62,7 +62,7 @@ const OrbitingHero = () => {
 
                             {/* Profile Picture */}
                             <FloatingElement duration={4} yOffset={10}>
-                                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-slate-900 shadow-[0_0_70px_rgba(59,130,246,0.3)] relative z-20">
+                                <div className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-4 border-slate-900 shadow-[0_0_70px_rgba(59,130,246,0.25)] relative z-20">
                                     <img
                                         src="/images/my pic.jpg"
                                         alt="Kasun Chamika"

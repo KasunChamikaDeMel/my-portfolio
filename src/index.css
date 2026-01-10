@@ -10,8 +10,10 @@
   }
 
   body {
-    /* Custom Hex Color Theme (Interpreted from #TAAFA9) */
-    @apply bg-[#ccd5ae] text-slate-950 antialiased;
+    /* Sage Green Theme */
+    background-color: #a8bba3;
+    @apply text-slate-950 antialiased min-h-screen;
+    background-attachment: fixed;
   }
 
   ::selection {

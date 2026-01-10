@@ -16,7 +16,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: ShieldCheck,
             color: "text-blue-600",
-            bg: "bg-blue-400/40",
+            bg: "bg-blue-400/25",
             file: "/certifications/aws-knowledge-amazon-eks-training-badge.png"
         },
         {
@@ -25,7 +25,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Cpu,
             color: "text-red-600",
-            bg: "bg-red-400/40",
+            bg: "bg-red-400/25",
             file: "/certifications/eCertificate - Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate.pdf"
         },
         {
@@ -34,7 +34,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Cloud,
             color: "text-orange-600",
-            bg: "bg-orange-400/40",
+            bg: "bg-orange-400/25",
             file: "/certifications/AWS Cloud Practitioner Essentials.pdf"
         },
         {
@@ -43,7 +43,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Zap,
             color: "text-yellow-600",
-            bg: "bg-yellow-400/40",
+            bg: "bg-yellow-400/25",
             file: "/certifications/Getting Started with DevOps on AWS.pdf"
         },
         {
@@ -52,7 +52,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Layers,
             color: "text-blue-600",
-            bg: "bg-blue-400/40",
+            bg: "bg-blue-400/25",
             file: "/certifications/Amazon EKS Deployment Options.pdf"
         },
         // Hidden items
@@ -62,7 +62,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Cpu,
             color: "text-purple-600",
-            bg: "bg-purple-400/40",
+            bg: "bg-purple-400/25",
             file: "/certifications/Introduction to Generative AI - Art of the Possible.pdf"
         },
         {
@@ -71,7 +71,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Server,
             color: "text-sky-600",
-            bg: "bg-sky-400/40",
+            bg: "bg-sky-400/25",
             file: "/certifications/Elastic Kubernetes Service (EKS).pdf"
         },
         {
@@ -80,7 +80,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: ShieldCheck,
             color: "text-red-500",
-            bg: "bg-red-400/40",
+            bg: "bg-red-400/25",
             file: "/certifications/Amazon EKS Security.pdf"
         },
         {
@@ -89,7 +89,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Globe,
             color: "text-blue-400",
-            bg: "bg-blue-400/40",
+            bg: "bg-blue-400/25",
             file: "/certifications/Amazon EKS Networking.pdf"
         },
         {
@@ -98,7 +98,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Server,
             color: "text-indigo-600",
-            bg: "bg-indigo-400/40",
+            bg: "bg-indigo-400/25",
             file: "/certifications/Introduction to Container Basics.pdf"
         },
         {
@@ -107,7 +107,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Layers,
             color: "text-blue-700",
-            bg: "bg-blue-400/40",
+            bg: "bg-blue-400/25",
             file: "/certifications/Introduction to Kubernetes Core Concepts.pdf"
         },
         {
@@ -116,7 +116,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Cpu,
             color: "text-slate-700",
-            bg: "bg-slate-400/40",
+            bg: "bg-slate-400/25",
             file: "/certifications/The Amazon EKS Cluster.pdf"
         },
         {
@@ -125,7 +125,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Server,
             color: "text-orange-700",
-            bg: "bg-orange-400/40",
+            bg: "bg-orange-400/25",
             file: "/certifications/Deploying Microservices to Amazon EKS.pdf"
         },
         {
@@ -134,7 +134,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Zap,
             color: "text-green-600",
-            bg: "bg-green-400/40",
+            bg: "bg-green-400/25",
             file: "/certifications/GitOps for Amazon EKS Automation.pdf"
         },
         {
@@ -143,7 +143,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: ShieldCheck,
             color: "text-amber-600",
-            bg: "bg-amber-400/40",
+            bg: "bg-amber-400/25",
             file: "/certifications/Autoscaling and Cost Optimization.pdf"
         },
         {
@@ -152,7 +152,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: FileText,
             color: "text-cyan-600",
-            bg: "bg-cyan-400/40",
+            bg: "bg-cyan-400/25",
             file: "/certifications/Basic Observability for Amazon EKS.pdf"
         },
         {
@@ -161,7 +161,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Medal,
             color: "text-blue-800",
-            bg: "bg-blue-400/40",
+            bg: "bg-blue-400/25",
             file: "/certifications/Amazon EKS - Knowledge Badge Readiness Path.pdf"
         },
         {
@@ -170,7 +170,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Globe,
             color: "text-sky-500",
-            bg: "bg-sky-400/40",
+            bg: "bg-sky-400/25",
             file: "/certifications/Coursera L10M59FXYYBJ - Build a free website with WordPress.pdf"
         },
         {
@@ -179,7 +179,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: FileText,
             color: "text-purple-600",
-            bg: "bg-purple-400/40",
+            bg: "bg-purple-400/25",
             file: "/certifications/Coursera KH6T0D48JJDZ - Introduction to Project Management with ClickUp.pdf"
         },
         {
@@ -188,7 +188,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: Target,
             color: "text-blue-500",
-            bg: "bg-blue-400/40",
+            bg: "bg-blue-400/25",
             file: "/certifications/Coursera 39GOWH0O1XGM - Google Ads for Beginners.pdf"
         },
         {
@@ -197,7 +197,7 @@ const CertificationsSection = () => {
             date: "2025",
             icon: ShieldCheck,
             color: "text-green-600",
-            bg: "bg-green-400/40",
+            bg: "bg-green-400/25",
             file: "/certifications/Coursera 4TUDCXY7MII5 - Increase SEO Traffic with WordPress.pdf"
         }
     ];
@@ -212,7 +212,7 @@ const CertificationsSection = () => {
                     <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
                         <span className="text-slate-950">Verified</span> <span className="gradient-text">Credentials</span>
                     </h2>
-                    <p className="text-slate-950 max-w-xl mx-auto font-bold opacity-80">
+                    <p className="text-slate-700 max-w-xl mx-auto font-bold opacity-80">
                         A comprehensive log of technical validations and cloud architecture proficiencies.
                     </p>
                 </FloatingElement>
@@ -234,21 +234,21 @@ const CertificationsSection = () => {
                             className="h-full"
                         >
                             <TiltCard className="h-full">
-                                <div className="h-full bg-slate-100/40 backdrop-blur-xl border border-slate-300 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all group flex flex-col items-center text-center relative overflow-hidden">
+                                <div className="h-full bg-slate-100/25 backdrop-blur-xl border border-slate-300 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all group flex flex-col items-center text-center relative overflow-hidden">
 
                                     <div className={`p-4 rounded-2xl ${cert.bg} border border-slate-200 mb-6 group-hover:scale-110 transition-transform relative z-10`}>
                                         <cert.icon size={32} className={cert.color} />
                                     </div>
 
-                                    <h3 className="text-md font-bold text-slate-950 mb-2 relative z-10 leading-tight min-h-[3rem] flex items-center">
+                                    <h3 className="text-md font-bold text-slate-900 mb-2 relative z-10 leading-tight min-h-[3rem] flex items-center">
                                         {cert.title}
                                     </h3>
 
                                     <div className="flex flex-col items-center gap-1 mb-6 relative z-10">
-                                        <span className="text-xs font-mono text-indigo-950 font-bold uppercase tracking-wider">
+                                        <span className="text-xs font-mono text-primary-600 font-bold uppercase tracking-wider">
                                             {cert.issuer}
                                         </span>
-                                        <span className="text-[10px] font-mono text-slate-900 bg-slate-50/50 px-2 py-0.5 rounded-full border border-slate-200">
+                                        <span className="text-[10px] font-mono text-slate-800 bg-black/5 px-2 py-0.5 rounded-full border border-black/10">
                                             VERIFIED_{cert.date}
                                         </span>
                                     </div>
@@ -257,7 +257,7 @@ const CertificationsSection = () => {
                                         <MagneticButton>
                                             <button
                                                 onClick={() => setSelectedCert(cert)}
-                                                className="flex items-center gap-2 text-xs font-bold text-slate-950 hover:text-blue-900 transition-colors uppercase tracking-widest no-underline"
+                                                className="flex items-center gap-2 text-xs font-bold text-slate-800 hover:text-primary-600 transition-colors uppercase tracking-widest no-underline"
                                             >
                                                 View System Log <ExternalLink size={12} />
                                             </button>
@@ -275,7 +275,7 @@ const CertificationsSection = () => {
                 <MagneticButton>
                     <button
                         onClick={() => setShowAll(!showAll)}
-                        className="px-8 py-3 bg-slate-100/40 border border-slate-300 rounded-xl font-bold flex items-center gap-2 hover:bg-slate-100/60 transition-all text-slate-950 hover:border-primary-400 group"
+                        className="px-8 py-3 bg-black/5 border border-black/20 rounded-xl font-bold flex items-center gap-2 hover:bg-black/10 transition-all text-slate-900 hover:border-primary-600 group"
                     >
                         {showAll ? (
                             <>
@@ -299,7 +299,7 @@ const CertificationsSection = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setSelectedCert(null)}
-                            className="absolute inset-0 bg-slate-900/60 backdrop-blur-md cursor-pointer"
+                            className="absolute inset-0 bg-primary-950/60 backdrop-blur-md cursor-pointer"
                         />
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -350,7 +350,7 @@ const CertificationsSection = () => {
                                     href={selectedCert.file}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-xs font-bold text-blue-700 hover:text-blue-800 flex items-center gap-1 uppercase tracking-tighter"
+                                    className="text-xs font-bold text-primary-700 hover:text-primary-800 flex items-center gap-1 uppercase tracking-tighter"
                                 >
                                     Open Full System <ExternalLink size={12} />
                                 </a>
@@ -361,26 +361,26 @@ const CertificationsSection = () => {
             </AnimatePresence>
 
             {/* Achievement Bar */}
-            <div className="mt-16 bg-slate-100/10 border border-slate-300 rounded-2xl p-6 backdrop-blur-md flex flex-wrap items-center justify-around gap-8">
+            <div className="mt-16 bg-black/5 border border-slate-300 rounded-2xl p-6 backdrop-blur-md flex flex-wrap items-center justify-around gap-8">
                 <div className="flex items-center gap-3">
-                    <div className="p-2 bg-yellow-400/40 rounded-lg text-yellow-700">
+                    <div className="p-2 bg-yellow-400/20 rounded-lg text-yellow-600">
                         <Trophy size={20} />
                     </div>
-                    <span className="text-xs font-mono text-slate-950 font-bold uppercase">20+ Technical Validations</span>
+                    <span className="text-xs font-mono text-slate-900 font-bold uppercase">20+ Technical Validations</span>
                 </div>
-                <div className="h-6 w-px bg-slate-300 hidden md:block" />
+                <div className="h-6 w-px bg-black/10 hidden md:block" />
                 <div className="flex items-center gap-3">
-                    <div className="p-2 bg-blue-400/40 rounded-lg text-blue-700">
+                    <div className="p-2 bg-primary-400/20 rounded-lg text-primary-600">
                         <Medal size={20} />
                     </div>
-                    <span className="text-xs font-mono text-slate-950 font-bold uppercase">Multi-Cloud Certified</span>
+                    <span className="text-xs font-mono text-slate-900 font-bold uppercase">Multi-Cloud Certified</span>
                 </div>
-                <div className="h-6 w-px bg-slate-300 hidden md:block" />
+                <div className="h-6 w-px bg-black/10 hidden md:block" />
                 <div className="flex items-center gap-3">
-                    <div className="p-2 bg-green-400/40 rounded-lg text-green-700">
+                    <div className="p-2 bg-green-400/20 rounded-lg text-green-600">
                         <ShieldCheck size={20} />
                     </div>
-                    <span className="text-xs font-mono text-slate-950 font-bold uppercase">System Architect Verified</span>
+                    <span className="text-xs font-mono text-slate-900 font-bold uppercase">System Architect Verified</span>
                 </div>
             </div>
 
