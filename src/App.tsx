@@ -1,56 +1,56 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import NavBar from './components/NavBar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import GlowingCursor from './components/GlowingCursor';
-import Chatbot from './components/Chatbot';
+import Navigation from './components/Navigation';
+import OrbitingHero from './components/OrbitingHero';
+import AboutSection from './components/AboutSection';
+import StatsStrip from './components/StatsStrip';
+import SkillsSection from './components/SkillsSection';
+import ServicesSection from './components/ServicesSection';
+import ProjectsSection from './components/ProjectsSection';
+import CertificationsSection from './components/CertificationsSection';
+import ContactSection from './components/ContactSection';
+import FooterSection from './components/FooterSection';
+import AssistantChatbot from './components/AssistantChatbot';
+import GravityBackground from './components/antigravity/GravityBackground';
 
-const pageVariants = {
+const pageTransition = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { duration: 0.5, staggerChildren: 0.1 } },
   exit: { opacity: 0, transition: { duration: 0.3 } },
 };
 
-const sectionVariants = {
+const sectionAnimation = {
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
 
 export function App() {
   return (
-    <div className="relative w-full min-h-screen bg-dark-950 text-dark-50 overflow-x-hidden">
-      {/* Background layers */}
-      <div className="fixed inset-0 bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950" style={{ zIndex: -20 }} />
-      
-      <div className="fixed inset-0 opacity-30" style={{ zIndex: -15 }}>
-        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
-      </div>
+    <div className="relative w-full min-h-screen bg-transparent text-slate-900 overflow-x-hidden">
+      {/* Background gradient layers */}
+      {/* Antigravity Background */}
+      <GravityBackground />
 
-      {/* All content - no z-index wrapper needed */}
-      <NavBar />
-      
+      {/* Main content */}
+      <Navigation />
+
       <AnimatePresence mode="wait">
-        <motion.main variants={pageVariants} initial="initial" animate="animate" exit="exit">
-          <motion.div variants={sectionVariants}><Hero /></motion.div>
-          <motion.div variants={sectionVariants}><About /></motion.div>
-          <motion.div variants={sectionVariants}><Skills /></motion.div>
-          <motion.div variants={sectionVariants}><Projects /></motion.div>
-          <motion.div variants={sectionVariants}><Contact /></motion.div>
+        <motion.main variants={pageTransition} initial="initial" animate="animate" exit="exit">
+          <motion.div variants={sectionAnimation}><OrbitingHero /></motion.div>
+          <motion.div variants={sectionAnimation}><AboutSection /></motion.div>
+          <motion.div variants={sectionAnimation}><StatsStrip /></motion.div>
+          <motion.div variants={sectionAnimation}><SkillsSection /></motion.div>
+          <motion.div variants={sectionAnimation}><ServicesSection /></motion.div>
+          <motion.div variants={sectionAnimation}><ProjectsSection /></motion.div>
+          <motion.div variants={sectionAnimation}><CertificationsSection /></motion.div>
+          <motion.div variants={sectionAnimation}><ContactSection /></motion.div>
         </motion.main>
       </AnimatePresence>
-      
-      <Footer />
-      
-      {/* Cursor Glow - high z-index so it appears above sections */}
-      <GlowingCursor />
-      
-      {/* Chatbot - highest z-index */}
-      <Chatbot />
+
+      <FooterSection />
+
+      {/* Interactive elements */}
+      {/* Interactive elements */}
+      <AssistantChatbot />
     </div>
   );
 }

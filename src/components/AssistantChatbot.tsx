@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot, User, Loader2 } from 'lucide-react';
 
-const Chatbot = () => {
+const AssistantChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -240,4 +240,4 @@ const Chatbot = () => {
   );
 };
 
-export default Chatbot;
+export default AssistantChatbot;

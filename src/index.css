@@ -8,9 +8,10 @@
   html {
     @apply scroll-smooth;
   }
-  
+
   body {
-    @apply bg-gray-950 text-dark-50 antialiased;
+    /* Custom Hex Color Theme (Interpreted from #TAAFA9) */
+    @apply bg-[#7AAFA9] text-slate-950 antialiased;
   }
 
   ::selection {
@@ -18,17 +19,38 @@
   }
 }
 
-@layer components {
-  .glass {
-    @apply backdrop-blur-md bg-white/5 border border-white/10;
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
   }
 
+  .lines-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+
+  /* Updated Glass for 20% Transparency */
+  .glass {
+    @apply backdrop-blur-md bg-slate-100/20 border border-slate-300 shadow-xl shadow-slate-200/50;
+  }
+
+  /* Retaining Dark Glass for specific high-contrast elements if needed, but softening it */
   .glass-dark {
-    @apply backdrop-blur-lg bg-dark-900/80 border border-dark-700/50;
+    @apply backdrop-blur-lg bg-slate-900/90 border border-slate-800 text-slate-100;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-600;
+    /* Slightly darker gradient for visibility on white */
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
   }
 
   .gradient-border {
@@ -68,8 +90,16 @@
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
   }
+
+  100% {
+    transform: translateY(500%);
+  }
+}
+
+.animate-scan {
+  animation: scan 2s linear infinite;
 }
