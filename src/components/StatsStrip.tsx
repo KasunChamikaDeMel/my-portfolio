@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useInView, animate } from 'framer-motion';
-import FloatingElement from './antigravity/FloatingElement';
+import FloatingElement from './background/FloatingElement';
 import { Trophy, Users, Briefcase, Star } from 'lucide-react';
 
 const CountUp = ({ value, duration = 2 }: { value: string; duration?: number }) => {

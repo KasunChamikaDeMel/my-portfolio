@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Figma, ArrowRight, Layers } from 'lucide-react';
-import MagneticButton from './antigravity/MagneticButton';
+import MagneticButton from './background/MagneticButton';
 
 const ProjectsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -109,16 +109,16 @@ const ProjectsSection = () => {
               transition={{ duration: 0.5 }}
               className="w-full h-full relative"
             >
-              <div className="w-full h-full bg-slate-100/20 backdrop-blur-xl rounded-3xl border border-slate-300 overflow-hidden relative group shadow-xl">
+              <div className="w-full h-full bg-slate-950/40 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden relative group shadow-xl">
 
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0 pointer-events-none">
                   <img
                     src={activeProject.image}
                     alt={activeProject.title}
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-500 group-hover:scale-105 transform"
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500 group-hover:scale-105 transform"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-slate-100/40 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none" />
                 </div>
 
                 {/* Content Layer */}
@@ -127,18 +127,18 @@ const ProjectsSection = () => {
                   {/* Decoration Line */}
                   <div className="w-20 h-1 bg-primary-500 mb-6 rounded-full" />
 
-                  <h3 className="text-4xl md:text-5xl font-bold text-slate-950 mb-4 shadow-white drop-shadow-sm">
+                  <h3 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-sm">
                     {activeProject.title}
                   </h3>
 
-                  <p className="text-lg text-slate-800 max-w-xl mb-8 leading-relaxed font-medium shadow-white drop-shadow-sm">
+                  <p className="text-lg text-slate-100 max-w-xl mb-8 leading-relaxed font-medium drop-shadow-sm">
                     {activeProject.description}
                   </p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-3 mb-8">
                     {activeProject.technologies.map(tech => (
-                      <span key={tech} className="px-3 py-1 bg-slate-100/20 border border-slate-300 rounded-lg text-sm text-slate-950 font-mono font-bold">
+                      <span key={tech} className="px-3 py-1 bg-white/10 border border-white/20 rounded-lg text-sm text-white font-mono font-bold">
                         {tech}
                       </span>
                     ))}

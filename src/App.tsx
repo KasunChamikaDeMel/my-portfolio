@@ -10,7 +10,7 @@ import CertificationsSection from './components/CertificationsSection';
 import ContactSection from './components/ContactSection';
 import FooterSection from './components/FooterSection';
 import AssistantChatbot from './components/AssistantChatbot';
-import GravityBackground from './components/antigravity/GravityBackground';
+import GravityBackground from './components/background/GravityBackground';
 
 const pageTransition = {
   initial: { opacity: 0 },

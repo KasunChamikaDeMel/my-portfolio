@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, Wifi, ShieldCheck, Globe } from 'lucide-react';
-import MagneticButton from './antigravity/MagneticButton';
-import TiltCard from './antigravity/TiltCard';
+import MagneticButton from './background/MagneticButton';
+import TiltCard from './background/TiltCard';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({

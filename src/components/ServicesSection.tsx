@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Layout, Server, Database, PenTool, Figma, Monitor, Smartphone, Code2 } from 'lucide-react';
-import TiltCard from './antigravity/TiltCard';
-import FloatingElement from './antigravity/FloatingElement';
+import TiltCard from './background/TiltCard';
+import FloatingElement from './background/FloatingElement';
 
 const ServicesSection = () => {
 

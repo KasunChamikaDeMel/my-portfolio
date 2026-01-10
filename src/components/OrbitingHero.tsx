@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import MagneticButton from './antigravity/MagneticButton';
-import FloatingElement from './antigravity/FloatingElement';
+import MagneticButton from './background/MagneticButton';
+import FloatingElement from './background/FloatingElement';
 
 const OrbitingHero = () => {
     return (
@@ -21,7 +21,7 @@ const OrbitingHero = () => {
                         </FloatingElement>
 
                         <FloatingElement delay={0.4} yOffset={5}>
-                            <p className="text-xl md:text-2xl text-slate-700 mb-10 font-light leading-relaxed">
+                            <p className="text-xl md:text-2xl text-slate-700 mb-10 font-semibold  leading-relaxed">
                                 Software Engineer | Full Stack Developer | DevOps / AI / ML Engineer.
                             </p>
                         </FloatingElement>

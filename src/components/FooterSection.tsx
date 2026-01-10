@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Facebook, Instagram, ArrowUp, Activity, Battery, Wifi, Globe, Command } from 'lucide-react';
-import MagneticButton from './antigravity/MagneticButton';
+import MagneticButton from './background/MagneticButton';
 import { useState, useEffect } from 'react';
 
 const FooterSection = () => {

@@ -4,7 +4,7 @@ import {
   Atom, FileJson, Coffee, Palette, Zap, Share2, Brain, Github, Box,
   Triangle, Cloud, Send
 } from 'lucide-react';
-import FloatingElement from './antigravity/FloatingElement';
+import FloatingElement from './background/FloatingElement';
 
 const SkillsSection = () => {
   const skills = [
@@ -142,8 +142,8 @@ const SkillsSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     <Icon size={32} className={`${skill.color} transition-transform group-hover:rotate-12`} />
                   </div>
-                  <span className="text-xs font-mono font-bold text-slate-500 tracking-tighter uppercase opacity-80 group-hover:opacity-100 group-hover:text-slate-900 transition-colors">
-                    {skill.name.split(' ')[0]}
+                  <span className="text-[10px] font-mono font-bold text-slate-950 tracking-tighter uppercase group-hover:text-blue-700 transition-colors text-center px-1">
+                    {skill.name}
                   </span>
                 </motion.div>
               );

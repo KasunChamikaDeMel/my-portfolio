@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { Code, Briefcase, BookOpen, Download, Zap, Radio } from 'lucide-react';
-import TiltCard from './antigravity/TiltCard';
-import MagneticButton from './antigravity/MagneticButton';
-import FloatingElement from './antigravity/FloatingElement';
+import { BookOpen, Download, Zap, Radio } from 'lucide-react';
+import TiltCard from './background/TiltCard';
+import MagneticButton from './background/MagneticButton';
+import FloatingElement from './background/FloatingElement';
 
 const AboutSection = () => {
   return (
@@ -60,7 +60,7 @@ const AboutSection = () => {
                 style={{ transform: "translateZ(40px)" }}
               >
                 <div className="bg-transparent backdrop-blur-md px-3 py-2 rounded-xl border border-slate-200/50 shadow-sm flex flex-col items-center">
-                  <span className="text-xl font-bold text-slate-900 leading-none">5+</span>
+                  <span className="text-xl font-bold text-slate-900 leading-none">3+</span>
                   <span className="text-[10px] font-bold text-slate-400 font-mono">EXP</span>
                 </div>
               </div>
@@ -73,7 +73,7 @@ const AboutSection = () => {
         {/* RIGHT COLUMN: The Data Stream */}
         <div className="relative">
           <FloatingElement duration={5} yOffset={5}>
-            <h3 className="text-xl font-mono text-primary-400 mb-6 flex items-center gap-3">
+            <h3 className="text-xl font-bold text-primary-400 mb-6 flex items-center gap-3">
               <Radio className="w-5 h-5 animate-pulse" />
               <span>TRANSMISSION_INCOMING</span>
             </h3>
@@ -86,29 +86,44 @@ const AboutSection = () => {
           >
             <div className="relative pl-8 border-l-2 border-primary-500/20">
               <p className="text-lg text-slate-900 leading-relaxed mb-6 font-medium">
-                Greetings. I am an architect of digital realities. While others write code, I craft <strong className="text-blue-700 font-bold">experiences</strong>.
-                My mission is to deconstruct complex problems and reassemble them into elegant, user-centric solutions.
+                I am a dedicated Software Engineer with a passion for building scalable, high-performance applications. With a solid foundation in software engineering and physical sciences, I specialize in architecting modern solutions that bridge the gap between technical complexity and intuitive user experiences.
               </p>
               <p className="text-lg text-slate-900 leading-relaxed font-medium">
-                Specializing in the Javascript ecosystem, I traverse the full stack—from the quantum depths of database architecture to the shimmering surface of UI interactivity.
+                My approach combines analytical precision with creative problem-solving, ensuring every project I undertake is both robust and visually compelling.
               </p>
+            </div>
+
+            {/* Detailed Info Grid */}
+            <div className="bg-slate-100/10 border border-slate-200 rounded-3xl p-6 space-y-4">
+              <div className="flex items-start gap-4">
+                <div className="p-2 bg-blue-100 rounded-lg text-blue-600 mt-1"><BookOpen size={18} /></div>
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900">BSc (Hons) in Software Engineering</h4>
+                  <p className="text-xs text-slate-600">Sri Lanka Technology Campus, Meepe, Padukka</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="p-2 bg-indigo-100 rounded-lg text-indigo-600 mt-1"><BookOpen size={18} /></div>
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900">Advanced Level - Physical Science</h4>
+                  <p className="text-xs text-slate-600">Central College Anuradhapura</p>
+                </div>
+              </div>
             </div>
 
             {/* Cyber Stats Grid */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: 'PROJECTS', value: '20+', icon: Code },
-                { label: 'EXPERIENCE', value: '3+ YRS', icon: Briefcase },
-                { label: 'EDUCATION', value: 'BSc Hons', icon: BookOpen },
-                { label: 'STATUS', value: 'OPEN', icon: Zap },
+                { label: 'BIRTHDAY', value: 'Feb 24, 1999', icon: Zap },
+                { label: 'ADDRESS', value: 'Thambuttegama, Sri Lanka', icon: Radio },
               ].map((stat, i) => (
                 <FloatingElement key={stat.label} delay={i * 0.1} yOffset={2}>
-                  <div className="bg-slate-100/20 backdrop-blur-xl border border-slate-300 rounded-3xl p-8 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
+                  <div className="bg-slate-100/20 backdrop-blur-xl border border-slate-300 rounded-3xl p-6 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
                     <div className="flex items-center gap-3 mb-2 text-slate-500 group-hover:text-blue-600 transition-colors">
                       <stat.icon size={18} />
-                      <span className="text-xs font-bold tracking-wider">{stat.label}</span>
+                      <span className="text-[10px] font-bold tracking-wider">{stat.label}</span>
                     </div>
-                    <div className="text-2xl font-display font-bold text-slate-900">{stat.value}</div>
+                    <div className="text-sm font-display font-bold text-slate-900 truncate" title={stat.value}>{stat.value}</div>
                   </div>
                 </FloatingElement>
               ))}
@@ -122,9 +137,9 @@ const AboutSection = () => {
               </MagneticButton>
 
               <MagneticButton>
-                <a href="/KasunChamikaDeMel-CV-FullStack.pdf" download className="px-8 py-4 bg-slate-100 border border-slate-200 hover:bg-slate-200 text-slate-700 font-medium rounded-full flex items-center gap-2 transition-all shadow-sm">
+                <a href="/KasunChamikaDeMel-CV.pdf" download className="px-8 py-4 bg-slate-100 border border-slate-200 hover:bg-slate-200 text-slate-700 font-medium rounded-full flex items-center gap-2 transition-all shadow-sm">
                   <Download size={18} />
-                  Download Data
+                  Download Resume
                 </a>
               </MagneticButton>
             </div>

@@ -46,7 +46,7 @@ const Navigation = () => {
             className="pointer-events-auto"
           >
             <a href="#home" className="text-2xl font-display font-bold">
-              <span className="gradient-text">Kasun</span>
+              <span className="gradient-text">Kasun C. De Mel</span>
             </a>
           </motion.div>
         </div>
