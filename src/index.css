@@ -7,6 +7,8 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    width: 100%;
+    min-height: 100vh;
   }
 
   body {
@@ -14,6 +16,7 @@
     background-color: #a8bba3;
     @apply text-slate-950 antialiased min-h-screen;
     background-attachment: fixed;
+    width: 100%;
   }
 
   ::selection {
