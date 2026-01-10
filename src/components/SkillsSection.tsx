@@ -62,7 +62,7 @@ const SkillsSection = () => {
             <motion.div
               animate={{ rotateX: 360, rotateY: 180, rotateZ: 45 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="w-[200px] h-[200px] border-2 border-primary-500/50 rounded-full absolute preserve-3d"
+              className="w-[200px] h-[200px] border-4 border-blue-600/40 rounded-full absolute preserve-3d shadow-[0_0_15px_rgba(37,99,235,0.2)]"
               style={{ transformStyle: 'preserve-3d' }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-transparent rounded-full border-2 border-blue-600 flex items-center justify-center">
@@ -76,7 +76,7 @@ const SkillsSection = () => {
             <motion.div
               animate={{ rotateX: 360, rotateY: -180, rotateZ: -45 }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="w-[320px] h-[320px] border-2 border-red-500/25 rounded-full absolute preserve-3d"
+              className="w-[320px] h-[320px] border-4 border-red-600/40 rounded-full absolute preserve-3d shadow-[0_0_20px_rgba(220,38,38,0.2)]"
               style={{ transformStyle: 'preserve-3d' }}
             >
               <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-transparent rounded-full border-2 border-red-600 flex items-center justify-center">
@@ -90,7 +90,7 @@ const SkillsSection = () => {
             <motion.div
               animate={{ rotateX: 360, rotateZ: 90 }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="w-[440px] h-[440px] border-2 border-purple-500/25 rounded-full absolute preserve-3d"
+              className="w-[440px] h-[440px] border-4 border-purple-600/40 rounded-full absolute preserve-3d shadow-[0_0_25px_rgba(147,51,234,0.2)]"
               style={{ transformStyle: 'preserve-3d' }}
             >
               <div className="absolute top-0 left-1/4 -translate-y-1/2 w-10 h-10 bg-transparent rounded-full border-2 border-purple-600 flex items-center justify-center">
@@ -99,11 +99,6 @@ const SkillsSection = () => {
             </motion.div>
           </div>
 
-          {/* Decorative Static Rings */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-            <div className="w-[550px] h-[550px] border-2 border-slate-400/50 rounded-full" />
-            <div className="w-[280px] h-[280px] border-2 border-slate-400/50 rounded-full border-dashed" />
-          </div>
 
         </div>
 

@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Navigation from './components/Navigation';
 import OrbitingHero from './components/OrbitingHero';
 import AboutSection from './components/AboutSection';
+import ExpertiseSection from './components/ExpertiseSection';
 import StatsStrip from './components/StatsStrip';
 import SkillsSection from './components/SkillsSection';
 import ServicesSection from './components/ServicesSection';
@@ -37,6 +38,7 @@ export function App() {
         <motion.main variants={pageTransition} initial="initial" animate="animate" exit="exit">
           <motion.div variants={sectionAnimation}><OrbitingHero /></motion.div>
           <motion.div variants={sectionAnimation}><AboutSection /></motion.div>
+          <motion.div variants={sectionAnimation}><ExpertiseSection /></motion.div>
           <motion.div variants={sectionAnimation}><StatsStrip /></motion.div>
           <motion.div variants={sectionAnimation}><SkillsSection /></motion.div>
           <motion.div variants={sectionAnimation}><ServicesSection /></motion.div>

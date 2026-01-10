@@ -43,26 +43,26 @@ const OrbitingHero = () => {
                         <div className="relative">
                             {/* Outer Ring */}
                             <motion.div
-                                className="absolute inset-[-60px] border border-primary-500/25 rounded-full"
+                                className="absolute inset-[-60px] border-2 border-primary-500/25 rounded-full"
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                             />
                             <motion.div
-                                className="absolute inset-[-60px] border-t border-r border-primary-500/60 rounded-full"
+                                className="absolute inset-[-60px] border-t-4 border-r-4 border-primary-600/60 rounded-full"
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                             />
 
                             {/* Inner Ring Reverse */}
                             <motion.div
-                                className="absolute inset-0 border-[1px] border-slate-300/30 rounded-full"
+                                className="absolute inset-0 border-2 border-slate-300/30 rounded-full"
                                 animate={{ rotate: -360 }}
                                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                             />
 
                             {/* Profile Picture */}
                             <FloatingElement duration={4} yOffset={10}>
-                                <div className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-4 border-slate-900 shadow-[0_0_70px_rgba(59,130,246,0.25)] relative z-20">
+                                <div className="w-80 h-80 md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-8 border-slate-950 shadow-[0_0_70px_rgba(137,166,127,0.3)] relative z-20">
                                     <img
                                         src="/images/my pic.jpg"
                                         alt="Kasun Chamika"

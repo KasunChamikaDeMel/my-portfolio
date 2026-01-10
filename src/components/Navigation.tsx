@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Home, User, Code, Mail, Zap, Layers, Award } from 'lucide-react';
+import { Home, User, Code, Mail, Zap, Layers, Award, Briefcase } from 'lucide-react';
 
 const Navigation = () => {
   const [activeHash, setActiveHash] = useState('#home');
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'services', 'projects', 'certifications', 'contact'];
+      const sections = ['home', 'about', 'expertise', 'skills', 'services', 'projects', 'certifications', 'contact'];
       const scrollPosition = window.scrollY + 300;
 
       for (const section of sections) {
@@ -29,6 +29,7 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Home', href: '#home', icon: Home },
     { name: 'About', href: '#about', icon: User },
+    { name: 'Expertise', href: '#expertise', icon: Briefcase },
     { name: 'Skills', href: '#skills', icon: Code },
     { name: 'Services', href: '#services', icon: Zap },
     { name: 'Projects', href: '#projects', icon: Layers },
@@ -45,7 +46,7 @@ const Navigation = () => {
             animate={{ opacity: 1, y: 0 }}
             className="pointer-events-auto"
           >
-            <a href="#home" className="text-2xl font-display font-bold">
+            <a href="#home" className="text-3xl font-display font-bold">
               <span className="gradient-text">Kasun C. De Mel</span>
             </a>
           </motion.div>
@@ -57,7 +58,7 @@ const Navigation = () => {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-          className="bg-white/40 border border-white/20 rounded-full px-6 py-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] backdrop-blur-xl flex items-center gap-1"
+          className="bg-transparent border border-white/20 rounded-full px-10 py-4 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] backdrop-blur-xl flex items-center gap-2"
         >
           {navLinks.map((link) => {
             const isActive = activeHash === link.href;
@@ -67,7 +68,7 @@ const Navigation = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
-                className={`relative p-3 rounded-full transition-all duration-300 flex flex-col items-center justify-center group ${isActive ? 'text-primary-600' : 'text-slate-600 hover:text-black'
+                className={`relative p-4 rounded-full transition-all duration-300 flex flex-col items-center justify-center group ${isActive ? 'text-primary-700' : 'text-slate-950 hover:text-black'
                   }`}
                 whileHover={{ scale: 1.2, y: -5 }}
                 whileTap={{ scale: 0.9 }}
@@ -75,13 +76,13 @@ const Navigation = () => {
                 <div className={`absolute inset-0 bg-primary-500/25 rounded-full blur-md opacity-0 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'group-hover:opacity-50'
                   }`} />
 
-                <Icon className={`w-5 h-5 relative z-10 transition-colors ${isActive ? 'text-primary-600' : 'text-slate-600 group-hover:text-black'
+                <Icon className={`w-7 h-7 relative z-10 transition-colors ${isActive ? 'text-primary-700' : 'text-slate-950 group-hover:text-black'
                   }`} />
 
                 {isActive && (
                   <motion.div
                     layoutId="activeDot"
-                    className="absolute -bottom-1 w-1 h-1 bg-primary-600 rounded-full"
+                    className="absolute -bottom-1 w-1 h-1 bg-primary-700 rounded-full"
                   />
                 )}
 

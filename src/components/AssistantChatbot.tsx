@@ -7,7 +7,7 @@ const AssistantChatbot = () => {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: 'Hi! I\'m an AI assistant powered by Llama 3.3. How can I help you today?'
+      content: 'Hi! I\'m your portfolio assistant. Ask me about Kasun\'s skills, projects, or experience!'
     }
   ]);
   const [input, setInput] = useState('');
@@ -39,49 +39,41 @@ const AssistantChatbot = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer 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'
-        },
-        body: JSON.stringify({
-          model: 'llama-3.3-70b-versatile',
-          messages: [
-            {
-              role: 'system',
-              content: 'You are a helpful AI assistant on a portfolio website. Be friendly, concise, and helpful. You can answer questions about web development, programming, and general topics.'
-            },
-            ...messages.map(msg => ({
-              role: msg.role,
-              content: msg.content
-            })),
-            {
-              role: 'user',
-              content: userMessage
-            }
-          ],
-          max_tokens: 512,
-          temperature: 0.7,
-        })
-      });
+      // Smart portfolio assistant with keyword-based responses
+      const lowerMessage = userMessage.toLowerCase();
+      let assistantMessage = '';
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        console.error('API Error:', data);
-        throw new Error(data.error?.message || 'API request failed');
+      // Portfolio-specific responses
+      if (lowerMessage.includes('skill') || lowerMessage.includes('technology') || lowerMessage.includes('tech stack')) {
+        assistantMessage = "Kasun specializes in Full Stack Development with expertise in React, Next.js, Node.js, TypeScript, Python, and modern DevOps tools. He's also experienced in AI/ML, UI/UX design, and cloud platforms like AWS.";
+      } else if (lowerMessage.includes('experience') || lowerMessage.includes('work')) {
+        assistantMessage = "Kasun has 3+ years of experience as a Software Engineer, specializing in building scalable, high-performance applications. He's worked on various projects ranging from e-commerce platforms to AI-powered solutions.";
+      } else if (lowerMessage.includes('project')) {
+        assistantMessage = "You can explore Kasun's projects in the Projects section above! He's built everything from travel blogs and e-commerce platforms to AI-powered tools and cross-platform file sharing apps.";
+      } else if (lowerMessage.includes('contact') || lowerMessage.includes('hire') || lowerMessage.includes('reach')) {
+        assistantMessage = "You can reach Kasun through the Contact section at the bottom of this page. He's available for freelance work, collaborations, and full-time opportunities!";
+      } else if (lowerMessage.includes('education') || lowerMessage.includes('degree')) {
+        assistantMessage = "Kasun holds a BSc (Hons) in Software Engineering from Sri Lanka Technology Campus and has a strong foundation in Physical Sciences from his Advanced Level studies.";
+      } else if (lowerMessage.includes('service') || lowerMessage.includes('offer')) {
+        assistantMessage = "Kasun offers Frontend Development, Backend Development, Full Stack Solutions, and UI/UX Design services. Check out the Services section for more details!";
+      } else if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+        assistantMessage = "Hello! I'm here to help you learn more about Kasun Chamika De Mel's portfolio. Feel free to ask about his skills, projects, experience, or how to get in touch!";
+      } else if (lowerMessage.includes('who') || lowerMessage.includes('about')) {
+        assistantMessage = "Kasun Chamika De Mel is a dedicated Software Engineer with a passion for building scalable, high-performance applications. He specializes in Full Stack development, AI/ML, DevOps, and creating intuitive user experiences.";
+      } else {
+        assistantMessage = "I'm here to help you explore Kasun's portfolio! You can ask me about his skills, experience, projects, education, or how to contact him. What would you like to know?";
       }
 
-      const assistantMessage = data.choices[0].message.content;
+      // Simulate a slight delay for realism
+      await new Promise(resolve => setTimeout(resolve, 500));
+
       setMessages(prev => [...prev, { role: 'assistant', content: assistantMessage }]);
 
     } catch (error) {
       console.error('Chatbot Error:', error);
-      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: `Error: ${errorMessage}. Make sure you have a valid Groq API key from https://console.groq.com/keys`
+        content: "I'm here to help! Ask me about Kasun's skills, projects, or experience."
       }]);
     } finally {
       setIsLoading(false);
@@ -131,8 +123,8 @@ const AssistantChatbot = () => {
                   <Bot className="w-5 h-5 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-950">AI Assistant</h3>
-                  <p className="text-xs text-slate-600">Powered by Llama 3.3</p>
+                  <h3 className="font-bold text-slate-950">Portfolio Assistant</h3>
+                  <p className="text-xs text-slate-600">Ask me anything!</p>
                 </div>
               </div>
               <button

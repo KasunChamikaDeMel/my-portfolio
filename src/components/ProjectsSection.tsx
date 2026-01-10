@@ -19,7 +19,7 @@ const ProjectsSection = () => {
     },
     {
       title: 'Travel Blogs',
-      category: 'Content Platform',
+      category: 'Web / Design / Content Platform',
       image: '/images/5.png',
       description: 'Immersive travel blog platform highlighting Sri Lankan destinations with rich media integration.',
       technologies: ['React', 'Next.js', 'Tailwind', 'Typescript'],
@@ -38,16 +38,6 @@ const ProjectsSection = () => {
       figmaLink: 'https://www.figma.com/design/QmZ9sfsPXsxYZgQRv9pNpp',
     },
     {
-      title: 'CEO Portfolio',
-      category: 'Personal Branding',
-      image: '/images/1.png',
-      description: 'High-end portfolio for Mr. Manura Aluthge, focusing on executive presence and minimalism.',
-      technologies: ['React', 'Next.js', 'Tailwind', 'Typescript'],
-      liveLink: 'https://manuraaluthge.vercel.app',
-      githubLink: 'https://github.com/KasunChamikaDeMel/portfolio-9',
-      figmaLink: '',
-    },
-    {
       title: 'Personal Portfolio',
       category: 'Creative Dev',
       image: '/images/4.png',
@@ -55,6 +45,26 @@ const ProjectsSection = () => {
       technologies: ['React', 'Framer Motion', 'Vite', 'TS'],
       liveLink: 'https://kasunchamikademel.vercel.app',
       githubLink: 'https://github.com/KasunChamikaDeMel/my-portfolio',
+      figmaLink: '',
+    },
+    {
+      title: 'Web-Drop-Core',
+      category: 'Cross-Platform File Sharing App',
+      image: '/images/8.png',
+      description: 'Cross-platform file sharing app with real-time file transfer and progress tracking.',
+      technologies: ['React', 'Next.js', 'Tailwind', 'Typescript'],
+      liveLink: 'https://web-drop-core.vercel.app/',
+      githubLink: 'https://github.com/KasunChamikaDeMel/Web-Drop-core',
+      figmaLink: '',
+    },
+    {
+      title: 'Minimal Portfolio for a MD',
+      category: 'Personal Branding',
+      image: '/images/1.png',
+      description: 'High-end portfolio for Mr. Manura Aluthge, focusing on executive presence and minimalism.',
+      technologies: ['React', 'Node.js', 'TailwindCSS', 'Typescript', 'Shadcn UI', 'Zustand'],
+      liveLink: 'https://manuraaluthge.vercel.app',
+      githubLink: 'https://github.com/KasunChamikaDeMel/portfolio-9',
       figmaLink: '',
     },
     {
@@ -75,6 +85,16 @@ const ProjectsSection = () => {
       technologies: ['Python', 'Scikit-Learn', 'Flask'],
       liveLink: '#',
       githubLink: 'https://github.com/KasunChamikaDeMel/Network-Intrusion-System-1',
+      figmaLink: '',
+    },
+    {
+      title: 'Point of Sale System',
+      category: 'POS System',
+      image: '/images/9.png',
+      description: 'Point of Sale System for a retail store.',
+      technologies: ['Typescript', 'Next.js', 'Javascript'],
+      liveLink: '#',
+      githubLink: 'https://github.com/KasunChamikaDeMel/pos-app',
       figmaLink: '',
     }
   ];
@@ -178,7 +198,7 @@ const ProjectsSection = () => {
                           href={activeProject.figmaLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-6 py-3 bg-purple-100/20 hover:bg-purple-200/30 backdrop-blur-md text-purple-700 rounded-xl font-bold border border-purple-300 flex items-center gap-2 transition-all shadow-sm cursor-pointer pointer-events-auto block"
+                          className="px-6 py-3 bg-purple-100/20 hover:bg-purple-200/30 backdrop-blur-md text-white rounded-xl font-bold border border-purple-300 flex items-center gap-2 transition-all shadow-sm cursor-pointer pointer-events-auto block"
                         >
                           <Figma size={20} />
                           Design File

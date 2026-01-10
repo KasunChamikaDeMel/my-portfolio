@@ -10,7 +10,7 @@ const ServicesSection = () => {
             title: 'Frontend Development',
             description: 'Building responsive, high-performance user interfaces with modern React ecosystems.',
             icon: Layout,
-            tools: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
+            tools: ['React.js', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3', 'JavaScript', 'TypeScript'],
             color: 'text-blue-600',
             bg: 'bg-blue-50'
         },
@@ -18,7 +18,7 @@ const ServicesSection = () => {
             title: 'Backend Development',
             description: 'Architecting robust server-side logic, API integrations, and database management.',
             icon: Server,
-            tools: ['Node.js', 'Express', 'Python', 'PostgreSQL'],
+            tools: ['Node.js', 'Express.js', 'Python', 'Flask', 'MySQL', 'MongoDB', 'Docker', 'AWS'],
             color: 'text-green-600',
             bg: 'bg-green-50'
         },
@@ -26,7 +26,7 @@ const ServicesSection = () => {
             title: 'Fullstack Solutions',
             description: 'End-to-end application development, seamlessly connecting client and server.',
             icon: Database,
-            tools: ['MERN Stack', 'Next.js API', 'Supabase', 'Docker'],
+            tools: ['MERN Stack', 'Next.js API', 'MySQL', 'Docker', 'AWS'],
             color: 'text-purple-600',
             bg: 'bg-purple-50'
         },
@@ -34,7 +34,7 @@ const ServicesSection = () => {
             title: 'UI/UX & Design',
             description: 'Designing intuitive digital experiences and high-fidelity prototypes.',
             icon: PenTool,
-            tools: ['Figma', 'Canva', 'Prototyping', 'Wireframing'],
+            tools: ['Figma', 'Canva', 'Adobe Photoshop', 'Prototyping', 'Wireframing'],
             color: 'text-orange-600',
             bg: 'bg-orange-50'
         }

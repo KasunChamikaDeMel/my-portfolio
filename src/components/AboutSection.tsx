@@ -61,7 +61,7 @@ const AboutSection = () => {
               >
                 <div className="bg-transparent backdrop-blur-md px-3 py-2 rounded-xl border border-slate-200/50 shadow-sm flex flex-col items-center">
                   <span className="text-xl font-bold text-slate-950 leading-none">3+</span>
-                  <span className="text-[10px] font-bold text-slate-600 font-mono">EXP</span>
+                  <span className="text-[10px] font-bold text-slate-850 font-mono">EXP</span>
                 </div>
               </div>
 
@@ -85,11 +85,15 @@ const AboutSection = () => {
             className="space-y-8"
           >
             <div className="relative pl-8 border-l-2 border-primary-500/20">
-              <p className="text-lg text-slate-800 leading-relaxed mb-6 font-medium">
-                I am a dedicated Software Engineer with a passion for building scalable, high-performance applications. With a solid foundation in software engineering and physical sciences, I specialize in architecting modern solutions that bridge the gap between technical complexity and intuitive user experiences.
+              <p className="text-lg text-slate-800 leading-relaxed mb-5 font-medium">
+                Helloooooowww.... I am Kasun Chamika, a dedicated Software Engineer with a passion for building scalable, high-performance applications. With a solid foundation in software engineering,
+                I specialize in architecting modern solutions that bridge the gap between technical complexity and intuitive user experiences.
+              </p>
+              <p className="text-lg text-slate-800 leading-relaxed mb-4 font-medium">
+                My approach combines analytical precision with creative problem-solving, ensuring every project I undertake is both robust and visually compelling.
               </p>
               <p className="text-lg text-slate-800 leading-relaxed font-medium">
-                My approach combines analytical precision with creative problem-solving, ensuring every project I undertake is both robust and visually compelling.
+                If you have a project in mind or need assistance with your software development journey, feel free to reach out. I'm here to help you bring your ideas to life.
               </p>
             </div>
 

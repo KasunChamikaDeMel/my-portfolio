@@ -41,13 +41,13 @@ const FooterSection = () => {
           {/* Brand / System Identity */}
           <div className="md:col-span-2 space-y-6">
             <div className="flex items-center gap-2 mb-2">
-              <Command className="text-primary-400" size={24} />
+              <Command className="text-primary-800" size={24} />
               <h2 className="text-2xl font-display font-bold text-slate-950 tracking-wider">
-                KASUN Chamika De Mel
+                KASUN CHAMIKA DE MEL
               </h2>
             </div>
             <p className="text-slate-800 max-w-sm font-bold leading-relaxed">
-              Deploying scalable architectures and immersive digital experiences from the void.
+              Arrived at the destination. Now you know me well. Let's create something amazing together.
             </p>
 
             <div className="flex items-center gap-4 text-xs font-mono text-primary-700 font-bold">
@@ -59,9 +59,9 @@ const FooterSection = () => {
 
           {/* Quick Navigation HUD */}
           <div>
-            <h3 className="font-mono text-sm text-primary-700 mb-6 uppercase tracking-widest font-bold underline decoration-primary-500/30">Navigation_Matrix</h3>
-            <ul className="space-y-3 font-mono text-sm">
-              {['About', 'Skills', 'Services', 'Projects', 'Certifications', 'Contact'].map((item) => (
+            <h3 className="font-mono text-m text-primary-700 mb-6 uppercase tracking-widest font-bold underline decoration-primary-500/30">Navigation_Matrix</h3>
+            <ul className="space-y-3 font-mono text-m">
+              {['About', 'Expertise', 'Skills', 'Services', 'Projects', 'Certifications', 'Contact'].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
@@ -100,7 +100,7 @@ const FooterSection = () => {
         <div className="border-t border-black/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-slate-800 font-bold">
 
           <div className="flex items-center gap-6">
-            <span>© {new Date().getFullYear()} CORE_SYSTEMS</span>
+            <span>© {new Date().getFullYear()} KASUN CHAMIKA DE MEL</span>
             <div className="h-3 w-px bg-slate-400" />
             <span className="flex items-center gap-2">
               <Globe size={12} /> LOC: EARTH [SRI LANKA]
