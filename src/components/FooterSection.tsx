@@ -43,7 +43,7 @@ const FooterSection = () => {
             <div className="flex items-center gap-2 mb-2">
               <Command className="text-primary-400" size={24} />
               <h2 className="text-2xl font-display font-bold text-slate-950 tracking-wider">
-                KASUN<span className="text-blue-900">.DEV</span>
+                KASUN Chamika De Mel
               </h2>
             </div>
             <p className="text-slate-950 max-w-sm font-bold leading-relaxed">
