@@ -74,7 +74,7 @@ const ContactSection = () => {
         <div className="space-y-6">
 
           {/* Status Card */}
-          <div className="bg-slate-100/20 border border-slate-300 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group shadow-xl">
+          <div className="bg-slate-100/40 border border-slate-300 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden group shadow-xl">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
               <Globe size={100} />
             </div>
@@ -89,8 +89,8 @@ const ContactSection = () => {
             </div>
             <div className="h-px bg-slate-300 w-full mb-6" />
             <div className="space-y-2 font-mono text-sm text-slate-600 font-medium">
-              <p>LAT: 6.840 N <span className="text-slate-400">|</span> LNG: 80.099 E</p>
-              <p>LOC: PADUKKA, SECTOR 01</p>
+              <p>LAT: 8.159827 N <span className="text-slate-400">|</span> LNG: 80.23931 E</p>
+              <p>LOC: Rajanganaya, Sri Lanka</p>
               <p>FREQ: +94 70 327 4701</p>
             </div>
           </div>
@@ -100,12 +100,12 @@ const ContactSection = () => {
             {[
               { icon: Mail, label: 'COMMS_CHANNEL', value: 'chamikakasun33635@gmail.com', href: 'mailto:chamikakasun33635@gmail.com' },
               { icon: Phone, label: 'AUDIO_LINK', value: '+94 70 327 4701', href: 'tel:+94703274701' },
-              { icon: MapPin, label: 'BASE_STATION', value: 'Padukka, Sri Lanka', href: 'https://maps.google.com' }
+              { icon: MapPin, label: 'BASE_STATION', value: 'No.189, 4th Mile Post, Rajanganaya, Thambuttegama, Sri Lanka', href: 'https://maps.app.goo.gl/FhgDmrZxD9e32brA7' }
             ].map((item) => (
               <TiltCard key={item.label} className="w-full">
                 <a
                   href={item.href}
-                  className="block p-5 bg-slate-100/20 border border-slate-300 rounded-xl hover:bg-slate-200/20 transition-all group shadow-sm hover:border-blue-400"
+                  className="block p-5 bg-slate-100/40 border border-slate-300 rounded-xl hover:bg-slate-200/40 transition-all group shadow-sm hover:border-blue-400"
                 >
                   <div className="flex items-center gap-4">
                     <div className="p-2 bg-blue-100 rounded-lg text-blue-700 group-hover:text-slate-900 transition-colors">
@@ -125,7 +125,7 @@ const ContactSection = () => {
 
         {/* RIGHT: Transmission Form */}
         <TiltCard className="h-full">
-          <div className="h-full bg-slate-100/20 backdrop-blur-xl border border-slate-300 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all group flex flex-col items-start relative overflow-hidden">
+          <div className="h-full bg-slate-100/40 backdrop-blur-xl border border-slate-300 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all group flex flex-col items-start relative overflow-hidden">
 
             {/* Decorative Corner Markers */}
             <div className="absolute top-4 left-4 w-2 h-2 border-l-2 border-t-2 border-primary-500" />
@@ -143,33 +143,33 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-slate-100/20 border border-slate-300 rounded-lg p-3 text-slate-900 focus:border-blue-600 focus:outline-none focus:bg-slate-100/30 transition-all placeholder:text-slate-400 font-medium shadow-sm"
+                    className="w-full bg-slate-100/40 border border-slate-300 rounded-lg p-3 text-slate-900 focus:border-blue-600 focus:outline-none focus:bg-slate-100/50 transition-all placeholder:text-slate-400 font-medium shadow-sm"
                     placeholder="Name"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-mono text-blue-700 font-bold" htmlFor="email">RETURN_ADDR</label>
+                  <label className="text-xs font-mono text-blue-700 font-bold" htmlFor="email">RETURN_ADDRESS</label>
                   <input
                     type="email"
                     id="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-slate-100/20 border border-slate-300 rounded-lg p-3 text-slate-900 focus:border-blue-600 focus:outline-none focus:bg-slate-100/30 transition-all placeholder:text-slate-400 font-medium shadow-sm"
+                    className="w-full bg-slate-100/40 border border-slate-300 rounded-lg p-3 text-slate-900 focus:border-blue-600 focus:outline-none focus:bg-slate-100/50 transition-all placeholder:text-slate-400 font-medium shadow-sm"
                     placeholder="Email"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-mono text-blue-700 font-bold" htmlFor="subject">DATA_HEADER</label>
+                <label className="text-xs font-mono text-blue-700 font-bold" htmlFor="subject">HEADER</label>
                 <input
                   type="text"
                   id="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full bg-slate-100/20 border border-slate-300 rounded-lg p-3 text-slate-900 focus:border-blue-600 focus:outline-none focus:bg-slate-100/30 transition-all placeholder:text-slate-400 font-medium shadow-sm"
+                  className="w-full bg-slate-100/40 border border-slate-300 rounded-lg p-3 text-slate-900 focus:border-blue-600 focus:outline-none focus:bg-slate-100/50 transition-all placeholder:text-slate-400 font-medium shadow-sm"
                   placeholder="Subject"
                 />
               </div>
@@ -182,19 +182,19 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full bg-slate-100/20 border border-slate-300 rounded-lg p-3 text-slate-900 focus:border-blue-600 focus:outline-none focus:bg-slate-100/30 transition-all placeholder:text-slate-400 resize-none font-medium shadow-sm"
+                  className="w-full bg-slate-100/40 border border-slate-300 rounded-lg p-3 text-slate-900 focus:border-blue-600 focus:outline-none focus:bg-slate-100/50 transition-all placeholder:text-slate-400 resize-none font-medium shadow-sm"
                   placeholder="Enter your message..."
                 />
               </div>
 
               {status === 'success' && (
-                <div className="p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400 text-sm font-mono text-center">
+                <div className="p-3 bg-green-500/40 border border-green-500/50 rounded-lg text-green-400 text-sm font-mono text-center">
                   TRANSMISSION_SUCCESSFUL
                 </div>
               )}
 
               {status === 'error' && (
-                <div className="p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm font-mono text-center">
+                <div className="p-3 bg-red-500/40 border border-red-500/50 rounded-lg text-red-400 text-sm font-mono text-center">
                   ERROR: {errorMessage}
                 </div>
               )}

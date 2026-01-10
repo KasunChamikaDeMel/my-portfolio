@@ -38,11 +38,11 @@ const StatsStrip = () => {
     return (
         <section className="container mx-auto px-6 py-12 relative z-10">
             <FloatingElement yOffset={5} duration={6}>
-                <div className="bg-slate-100/20 backdrop-blur-xl border border-slate-300 rounded-3xl p-8 shadow-xl shadow-slate-300/50 flex flex-wrap justify-between items-center gap-8 md:gap-4 scroll-mt-20">
+                <div className="bg-slate-100/40 backdrop-blur-xl border border-slate-300 rounded-3xl p-8 shadow-xl shadow-slate-300/50 flex flex-wrap justify-between items-center gap-8 md:gap-4 scroll-mt-20">
 
                     {stats.map((stat) => (
                         <div key={stat.label} className="flex-1 min-w-[150px] flex flex-col items-center text-center group cursor-default">
-                            <div className={`mb-3 p-3 bg-slate-100/20 border border-slate-200 rounded-2xl shadow-sm group-hover:scale-110 transition-transform ${stat.color}`}>
+                            <div className={`mb-3 p-3 bg-slate-100/40 border border-slate-200 rounded-2xl shadow-sm group-hover:scale-110 transition-transform ${stat.color}`}>
                                 <stat.icon size={24} />
                             </div>
                             <h3 className="text-3xl font-display font-bold text-slate-900 mb-1">

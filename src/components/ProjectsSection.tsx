@@ -165,7 +165,7 @@ const ProjectsSection = () => {
                         href={activeProject.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-6 py-3 bg-slate-100/20 border border-slate-300 hover:bg-slate-200/20 backdrop-blur-md text-slate-900 rounded-xl font-bold flex items-center gap-2 transition-all shadow-sm hover:border-blue-400 cursor-pointer pointer-events-auto block"
+                        className="px-6 py-3 bg-slate-100/40 border border-slate-300 hover:bg-slate-200/40 backdrop-blur-md text-slate-900 rounded-xl font-bold flex items-center gap-2 transition-all shadow-sm hover:border-blue-400 cursor-pointer pointer-events-auto block"
                       >
                         <Github size={20} />
                         Source Code
@@ -204,7 +204,7 @@ const ProjectsSection = () => {
               onClick={() => setActiveIndex(index)}
               className={`group p-4 rounded-xl cursor-pointer transition-all duration-300 border relative overflow-hidden ${activeIndex === index
                 ? 'bg-slate-100/30 border-blue-400 shadow-lg shadow-blue-500/20'
-                : 'bg-slate-100/10 border-slate-300 hover:bg-slate-100/20 hover:border-slate-400'
+                : 'bg-slate-100/30 border-slate-300 hover:bg-slate-100/40 hover:border-slate-400'
                 }`}
             >
               {/* Active Indicator Bar */}
@@ -225,7 +225,7 @@ const ProjectsSection = () => {
                   </span>
                 </div>
 
-                <div className={`p-2 rounded-lg transition-colors ${activeIndex === index ? 'bg-blue-100/20 text-blue-700' : 'bg-slate-100/20 text-slate-500'}`}>
+                <div className={`p-2 rounded-lg transition-colors ${activeIndex === index ? 'bg-blue-100/40 text-blue-700' : 'bg-slate-100/40 text-slate-500'}`}>
                   {activeIndex === index ? <ArrowRight size={16} /> : <Layers size={16} />}
                 </div>
               </div>

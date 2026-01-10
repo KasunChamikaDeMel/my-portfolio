@@ -19,7 +19,7 @@ const GravityBackground: React.FC = () => {
         const CONNECTION_DISTANCE = 150;
         const MOUSE_RADIUS = 200;
         // Custom Color Theme
-        const BG_COLOR = '#7AAFA9'; // Muted Blue-Teal
+        const BG_COLOR = '#ccd5ae'; // Moss Green Theme
         const PARTICLE_COLOR = 'rgba(15, 23, 42, 0.9)'; // Darker Slate
         const LINE_COLOR = 'rgba(255, 255, 255, 0.3)'; // Light lines for contrast on darker background
 

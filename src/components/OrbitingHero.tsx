@@ -43,7 +43,7 @@ const OrbitingHero = () => {
                         <div className="relative">
                             {/* Outer Ring */}
                             <motion.div
-                                className="absolute inset-[-60px] border border-primary-500/20 rounded-full"
+                                className="absolute inset-[-60px] border border-primary-500/40 rounded-full"
                                 animate={{ rotate: 360 }}
                                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                             />

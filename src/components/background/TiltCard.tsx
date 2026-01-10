@@ -58,7 +58,7 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, className = "" }) => {
                     transform: "translateZ(-50px)",
                     transformStyle: "preserve-3d",
                 }}
-                className="absolute inset-4 rounded-3xl bg-primary-500/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 pointer-events-none"
+                className="absolute inset-4 rounded-3xl bg-primary-500/40 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 pointer-events-none"
             />
             {children}
         </motion.div>

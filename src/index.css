@@ -11,7 +11,7 @@
 
   body {
     /* Custom Hex Color Theme (Interpreted from #TAAFA9) */
-    @apply bg-[#7AAFA9] text-slate-950 antialiased;
+    @apply bg-[#ccd5ae] text-slate-950 antialiased;
   }
 
   ::selection {

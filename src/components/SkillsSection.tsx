@@ -138,9 +138,9 @@ const SkillsSection = () => {
                   }}
                   className="flex flex-col items-center group"
                 >
-                  <div className="w-20 h-20 bg-transparent rounded-full border border-slate-300 shadow-lg flex items-center justify-center transition-all group-hover:scale-110 group-hover:border-primary-400 group-hover:shadow-primary-400/20 mb-3 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Icon size={32} className={`${skill.color} transition-transform group-hover:rotate-12`} />
+                  <div className="w-20 h-20 bg-white/40 backdrop-blur-sm rounded-full border-2 border-slate-400 shadow-xl flex items-center justify-center transition-all group-hover:scale-110 group-hover:border-primary-500 group-hover:shadow-primary-500/30 mb-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <Icon size={32} className={`${skill.color} transition-transform group-hover:rotate-12 drop-shadow-sm`} />
                   </div>
                   <span className="text-[10px] font-mono font-bold text-slate-950 tracking-tighter uppercase group-hover:text-blue-700 transition-colors text-center px-1">
                     {skill.name}

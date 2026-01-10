@@ -72,7 +72,7 @@ const Navigation = () => {
                 whileHover={{ scale: 1.2, y: -5 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <div className={`absolute inset-0 bg-primary-500/20 rounded-full blur-md opacity-0 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'group-hover:opacity-50'
+                <div className={`absolute inset-0 bg-primary-500/40 rounded-full blur-md opacity-0 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'group-hover:opacity-50'
                   }`} />
 
                 <Icon className={`w-5 h-5 relative z-10 transition-colors ${isActive ? 'text-primary-400' : 'text-slate-400 group-hover:text-white'

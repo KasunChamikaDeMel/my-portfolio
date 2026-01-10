@@ -23,7 +23,7 @@ const AboutSection = () => {
 
 
           <TiltCard className="w-full max-w-lg aspect-[4/5] relative">
-            <div className="w-full h-full bg-slate-100/20 backdrop-blur-md rounded-[2rem] border border-slate-200 shadow-2xl relative overflow-hidden group">
+            <div className="w-full h-full bg-slate-100/40 backdrop-blur-md rounded-[2rem] border border-slate-200 shadow-2xl relative overflow-hidden group">
 
               {/* Image Container */}
               <div
@@ -118,7 +118,7 @@ const AboutSection = () => {
                 { label: 'ADDRESS', value: 'Thambuttegama, Sri Lanka', icon: Radio },
               ].map((stat, i) => (
                 <FloatingElement key={stat.label} delay={i * 0.1} yOffset={2}>
-                  <div className="bg-slate-100/20 backdrop-blur-xl border border-slate-300 rounded-3xl p-6 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
+                  <div className="bg-slate-100/40 backdrop-blur-xl border border-slate-300 rounded-3xl p-6 shadow-xl relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
                     <div className="flex items-center gap-3 mb-2 text-slate-500 group-hover:text-blue-600 transition-colors">
                       <stat.icon size={18} />
                       <span className="text-[10px] font-bold tracking-wider">{stat.label}</span>

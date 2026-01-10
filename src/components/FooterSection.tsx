@@ -85,7 +85,7 @@ const FooterSection = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-slate-100/20 border border-slate-300 rounded-lg hover:bg-slate-200/40 hover:border-blue-700 transition-all group block shadow-sm backdrop-blur-md"
+                    className="p-3 bg-slate-100/40 border border-slate-300 rounded-lg hover:bg-slate-200/40 hover:border-blue-700 transition-all group block shadow-sm backdrop-blur-md"
                   >
                     <social.icon size={20} className="text-slate-900 group-hover:text-blue-900 transition-colors" />
                   </a>
@@ -124,7 +124,7 @@ const FooterSection = () => {
             onClick={scrollToTop}
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="p-4 bg-primary-600/20 backdrop-blur-md border border-primary-500/50 text-white rounded-full hover:bg-primary-600 hover:border-primary-500 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] group"
+            className="p-4 bg-primary-600/40 backdrop-blur-md border border-primary-500/50 text-white rounded-full hover:bg-primary-600 hover:border-primary-500 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] group"
           >
             <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
           </motion.button>

@@ -34,7 +34,7 @@ const AssistantChatbot = () => {
 
     const userMessage = input.trim();
     setInput('');
-    
+
     setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
     setIsLoading(true);
 
@@ -67,7 +67,7 @@ const AssistantChatbot = () => {
       });
 
       const data = await response.json();
-      
+
       if (!response.ok) {
         console.error('API Error:', data);
         throw new Error(data.error?.message || 'API request failed');
@@ -75,12 +75,12 @@ const AssistantChatbot = () => {
 
       const assistantMessage = data.choices[0].message.content;
       setMessages(prev => [...prev, { role: 'assistant', content: assistantMessage }]);
-      
+
     } catch (error) {
       console.error('Chatbot Error:', error);
       const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-      setMessages(prev => [...prev, { 
-        role: 'assistant', 
+      setMessages(prev => [...prev, {
+        role: 'assistant',
         content: `Error: ${errorMessage}. Make sure you have a valid Groq API key from https://console.groq.com/keys`
       }]);
     } finally {
@@ -125,9 +125,9 @@ const AssistantChatbot = () => {
             className="fixed right-6 z-[9999] w-96 h-[600px] bg-gray-900/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-blue-500/30 flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-500/20 to-purple-600/20 border-b border-blue-500/30">
+            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-500/40 to-purple-600/40 border-b border-blue-500/30">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-blue-500/20 rounded-lg">
+                <div className="p-2 bg-blue-500/40 rounded-lg">
                   <Bot className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
@@ -153,11 +153,10 @@ const AssistantChatbot = () => {
                   transition={{ delay: index * 0.1 }}
                   className={`flex gap-3 ${message.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
                 >
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${
-                    message.role === 'user' 
-                      ? 'bg-blue-500' 
-                      : 'bg-purple-500/20 border border-purple-500/30'
-                  }`}>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center ${message.role === 'user'
+                      ? 'bg-blue-500'
+                      : 'bg-purple-500/40 border border-purple-500/30'
+                    }`}>
                     {message.role === 'user' ? (
                       <User className="w-4 h-4 text-white" />
                     ) : (
@@ -165,24 +164,23 @@ const AssistantChatbot = () => {
                     )}
                   </div>
                   <div className={`flex-1 ${message.role === 'user' ? 'text-right' : 'text-left'}`}>
-                    <div className={`inline-block px-4 py-2 rounded-2xl ${
-                      message.role === 'user'
+                    <div className={`inline-block px-4 py-2 rounded-2xl ${message.role === 'user'
                         ? 'bg-blue-500 text-white'
                         : 'bg-gray-800 text-gray-100 border border-gray-700'
-                    }`}>
+                      }`}>
                       <p className="text-sm whitespace-pre-wrap">{message.content}</p>
                     </div>
                   </div>
                 </motion.div>
               ))}
-              
+
               {isLoading && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   className="flex gap-3"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/40 border border-purple-500/30 flex items-center justify-center">
                     <Bot className="w-4 h-4 text-purple-400" />
                   </div>
                   <div className="bg-gray-800 border border-gray-700 px-4 py-2 rounded-2xl">
@@ -190,7 +188,7 @@ const AssistantChatbot = () => {
                   </div>
                 </motion.div>
               )}
-              
+
               <div ref={messagesEndRef} />
             </div>
 
@@ -205,7 +203,7 @@ const AssistantChatbot = () => {
                   onKeyPress={handleKeyPress}
                   placeholder="Type your message..."
                   disabled={isLoading}
-                  className="flex-1 px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-700 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 px-4 py-3 bg-gray-800 text-white rounded-xl border border-gray-700 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 />
                 <button
                   onClick={handleSendMessage}
