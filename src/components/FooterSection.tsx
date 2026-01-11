@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Facebook, Instagram, ArrowUp, Activity, Battery, Wifi, Globe, Command } from 'lucide-react';
+import { Github, Linkedin, Facebook, Instagram, ArrowUp, Activity, Battery, Wifi, Globe, Command, Award } from 'lucide-react';
 import MagneticButton from './background/MagneticButton';
 import { useState, useEffect } from 'react';
 
@@ -25,6 +25,7 @@ const FooterSection = () => {
     { icon: Linkedin, href: 'https://www.linkedin.com/in/kasun-chamika-11a88a281/', label: 'LinkedIn' },
     { icon: Facebook, href: 'https://www.facebook.com/chamika.kasundemel', label: 'Facebook' },
     { icon: Instagram, href: 'https://www.instagram.com/ka_su_n.99/', label: 'Instagram' },
+    { icon: Award, href: 'https://certdirectory.io/profile/kasun-chamika-demel', label: 'CertDirectory' },
   ];
 
   return (
