@@ -123,7 +123,7 @@ const AssistantChatbot = () => {
                   <Bot className="w-5 h-5 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-950">Portfolio Assistant</h3>
+                  <h3 className="font-bold text-slate-950">Virtual Portfolio Assistant</h3>
                   <p className="text-xs text-slate-600">Ask me anything!</p>
                 </div>
               </div>
