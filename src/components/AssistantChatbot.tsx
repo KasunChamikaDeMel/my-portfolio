@@ -114,7 +114,7 @@ const AssistantChatbot = () => {
             exit={{ opacity: 0, x: 100, scale: 0.8 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             style={{ top: '25%', transform: 'translateY(-50%)' }}
-            className="fixed right-6 z-[9999] w-96 h-[600px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-primary-200 flex flex-col overflow-hidden"
+            className="fixed right-6 z-[9999] w-96 h-[450px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-primary-200 flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 bg-gradient-to-r from-primary-500/10 to-green-600/10 border-b border-primary-100">
