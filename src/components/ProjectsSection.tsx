@@ -58,6 +58,16 @@ const ProjectsSection = () => {
       figmaLink: '',
     },
     {
+      title: 'Vehicle-Maintainance-and-Milage-Tracker',
+      category: 'Vehicle Maintainance Tracker',
+      image: '/images/10.png',
+      description: 'Vehicle Maintainance Tracker with service history and milage tracking, eco test, license test, insurance update dates ',
+      technologies: ['React 18', 'React Router', 'Tailwind', 'Typescript', 'Shadcn UI'],
+      liveLink: '#',
+      githubLink: 'https://github.com/KasunChamikaDeMel/Vehicle-Maintainance-and-Milage-Tracker',
+      figmaLink: '',
+    },
+    {
       title: 'Minimal Portfolio for a MD',
       category: 'Personal Branding',
       image: '/images/1.png',
