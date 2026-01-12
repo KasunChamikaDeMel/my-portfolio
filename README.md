@@ -1,4 +1,4 @@
-# Kasun Chamika De Mel - Portfolio
+# Kasun Chamika De Mel
 
 A modern, high-performance portfolio website built with **Next.js 16**, **TypeScript**, and **TailwindCSS**.
 

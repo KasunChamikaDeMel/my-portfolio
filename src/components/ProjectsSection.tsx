@@ -42,7 +42,7 @@ const ProjectsSection = () => {
       category: 'Creative Dev',
       image: '/images/4.png',
       description: 'My digital garden. A playground for experimental UI keyframes and React performance optimization.',
-      technologies: ['React', 'Framer Motion', 'Vite', 'TS'],
+      technologies: ['Next.js 16', 'Typescript', 'Framer Motion', 'TailwindCSS', 'Shadcn UI'],
       liveLink: 'https://kasunchamikademel.vercel.app',
       githubLink: 'https://github.com/KasunChamikaDeMel/my-portfolio',
       figmaLink: '',
