@@ -1,31 +1,56 @@
-# Personal Portfolio
+# Kasun Chamika De Mel - Portfolio
 
-A modern, responsive portfolio website built with React, TypeScript, and TailwindCSS.
+A modern, high-performance portfolio website built with **Next.js 16**, **TypeScript**, and **TailwindCSS**.
 
-## Features
+## 🚀 Key Features
 
-- Smooth animations with Framer Motion
-- Interactive chatbot
-- Glowing cursor effects
-- Contact form with email integration
-- Fully responsive design
-- Dark theme with gradient backgrounds
+- **Next.js 16 (App Router)** - Fast, SEO-friendly, and modern architecture.
+- **Framer Motion** - Premium animations and smooth transitions.
+- **Interactive Assistant** - AI-powered chatbot for better engagement.
+- **Holographic UI** - Scientific/Technical aesthetic with glassmorphism.
+- **Fully Responsive** - Optimized for all screen sizes from mobile to wide monitors.
+- **Optimized Performance** - Leveraging Next.js image optimization and Turbopack.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- React 18.3.1
-- TypeScript
-- Vite
-- TailwindCSS
-- Framer Motion
-- Lucide React
+- **Framework**: Next.js 16
+- **Language**: TypeScript
+- **Styling**: TailwindCSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Hosting**: Vercel
 
-## Getting Started
+## 📦 Getting Started
 
-1. Run `npm install`
-2. Run `npm run dev`
-3. Open your browser to `http://localhost:5173`
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/KasunChamikaDeMel/my-portfolio.git
+   ```
 
-## Build
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-Run `npm run build` to create a production build.
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **View the site**:
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🏗️ Build & Production
+
+To create an optimized production build, run:
+```bash
+npm run build
+```
+
+To preview the production build locally:
+```bash
+npm run start
+```
+
+---
+Designed & Developed by [Kasun Chamika De Mel](https://github.com/KasunChamikaDeMel)

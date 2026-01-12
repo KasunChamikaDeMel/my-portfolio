@@ -4,9 +4,14 @@ import MagneticButton from './background/MagneticButton';
 import { useState, useEffect } from 'react';
 
 const FooterSection = () => {
-  const [time, setTime] = useState(new Date().toLocaleTimeString());
+  const [time, setTime] = useState<string>('');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    // Set initial time on client
+    setTime(new Date().toLocaleTimeString());
+
     const timer = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
     }, 1000);
@@ -109,7 +114,7 @@ const FooterSection = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="hidden md:block">SYS_TIME: {time}</span>
+            <span className="hidden md:block" suppressHydrationWarning>SYS_TIME: {mounted ? time : '--:--:--'}</span>
             <div className="h-3 w-px bg-slate-400 hidden md:block" />
             <a href="#" className="hover:text-primary-600 transition-colors">PRIVACY_PROTOCOL</a>
             <a href="#" className="hover:text-primary-600 transition-colors">TERMS_OF_ENGAGEMENT</a>

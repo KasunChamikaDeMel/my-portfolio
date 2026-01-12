@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './index.html',
+    './app/**/*.{js,ts,jsx,tsx}',
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
@@ -26,6 +26,11 @@ export default {
           900: '#1b211a',
           950: '#0e110d',
         },
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        display: ['var(--font-space-grotesk)', 'Space Grotesk', 'sans-serif'],
+        syne: ['var(--font-syne)', 'Syne', 'sans-serif'],
       },
     },
   },

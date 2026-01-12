@@ -11,17 +11,20 @@ const OrbitingHero = () => {
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
 
                     {/* Left Column: Content */}
-                    <div className="flex-1 text-left max-w-2xl order-2 lg:order-1">
+                    <div className="flex-1 text-left max-w-4xl order-2 lg:order-1">
                         <FloatingElement delay={0.2} yOffset={5}>
-                            <h1 className="text-6xl md:text-8xl font-display font-bold mb-6 tracking-tight text-slate-900">
-                                <span className="bg-clip-text text-transparent bg-gradient-to-br from-black via-slate-800 to-slate-700">
-                                    Kasun Chamika De Mel
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-syne font-bold mb-6 tracking-tighter text-slate-900 leading-[0.9]">
+                                <span className="bg-clip-text text-transparent bg-gradient-to-br from-black via-slate-800 to-slate-700 block whitespace-nowrap">
+                                    Kasun Chamika
+                                </span>
+                                <span className="bg-clip-text text-transparent bg-gradient-to-br from-black via-slate-800 to-slate-700 block whitespace-nowrap">
+                                    De Mel
                                 </span>
                             </h1>
                         </FloatingElement>
 
                         <FloatingElement delay={0.4} yOffset={5}>
-                            <p className="text-xl md:text-2xl text-slate-800 mb-10 font-semibold  leading-relaxed">
+                            <p className="text-xl md:text-2xl text-slate-800 mb-10 font-semibold leading-relaxed max-w-xl">
                                 Software Engineer | Full Stack Developer | DevOps / AI / ML Engineer.
                             </p>
                         </FloatingElement>
