@@ -14,11 +14,9 @@ const Background: React.FC = () => {
         let particles: Particle[] = [];
         let mouse = { x: -9999, y: -9999 };
 
-        // Configuration
         const PARTICLE_COUNT = 80;
         const CONNECTION_DISTANCE = 150;
         const MOUSE_RADIUS = 200;
-        // Custom Color Theme
         const PARTICLE_COLOR = 'rgba(15, 23, 42, 0.9)';
         const LINE_COLOR = 'rgba(255, 255, 255, 0.3)';
 
@@ -44,15 +42,12 @@ const Background: React.FC = () => {
             }
 
             update(w: number, h: number) {
-                // Mouse Interaction (Antigravity/Gravity Effect)
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
                 let forceDirectionX = dx / distance;
                 let forceDirectionY = dy / distance;
 
-                // Physics: Particles move away from cursor (Repulsion) or towards (Attraction)
-                // Let's go with a gentle repulsion to simulate "pushing" the particles
                 const maxDistance = MOUSE_RADIUS;
                 let force = (maxDistance - distance) / maxDistance;
                 if (force < 0) force = 0;
@@ -64,7 +59,6 @@ const Background: React.FC = () => {
                     this.x -= directionX;
                     this.y -= directionY;
                 } else {
-                    // Return to natural movement
                     if (this.x !== this.baseX) {
                         let dx = this.x - this.baseX;
                         this.x -= dx / 10;
@@ -75,11 +69,9 @@ const Background: React.FC = () => {
                     }
                 }
 
-                // Normal Movement
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Bounce off edges
                 if (this.x < 0 || this.x > w) this.vx *= -1;
                 if (this.y < 0 || this.y > h) this.vy *= -1;
             }
@@ -104,16 +96,13 @@ const Background: React.FC = () => {
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Fill Background with Sage Green
             ctx.fillStyle = '#a8bba3';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Draw Particles & Connections
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update(canvas.width, canvas.height);
                 particles[i].draw();
 
-                // Draw Lines using Nested Loop (Constellation)
                 for (let j = i; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
