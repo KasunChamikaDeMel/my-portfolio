@@ -39,11 +39,10 @@ const AssistantChatbot = () => {
     setIsLoading(true);
 
     try {
-      // Smart portfolio assistant with keyword-based responses
       const lowerMessage = userMessage.toLowerCase();
       let assistantMessage = '';
 
-      // Portfolio-specific responses
+      // responses
       if (lowerMessage.includes('skill') || lowerMessage.includes('technology') || lowerMessage.includes('tech stack')) {
         assistantMessage = "Kasun specializes in Full Stack Development with expertise in React, Next.js, Node.js, TypeScript, Python, and modern DevOps tools. He's also experienced in AI/ML, UI/UX design, and cloud platforms like AWS.";
       } else if (lowerMessage.includes('experience') || lowerMessage.includes('work')) {
@@ -64,7 +63,7 @@ const AssistantChatbot = () => {
         assistantMessage = "I'm here to help you explore Kasun's portfolio! You can ask me about his skills, experience, projects, education, or how to contact him. What would you like to know?";
       }
 
-      // Simulate a slight delay for realism
+      // delay
       await new Promise(resolve => setTimeout(resolve, 500));
 
       setMessages(prev => [...prev, { role: 'assistant', content: assistantMessage }]);
@@ -116,7 +115,6 @@ const AssistantChatbot = () => {
             style={{ top: '25%', transform: 'translateY(-50%)' }}
             className="fixed right-6 z-[9999] w-96 h-[450px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-primary-200 flex flex-col overflow-hidden"
           >
-            {/* Header */}
             <div className="flex items-center justify-between p-4 bg-gradient-to-r from-primary-500/10 to-green-600/10 border-b border-primary-100">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-primary-100 rounded-lg">
@@ -135,7 +133,6 @@ const AssistantChatbot = () => {
               </button>
             </div>
 
-            {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-blue-400/50 scrollbar-track-gray-100">
               {messages.map((message, index) => (
                 <motion.div
@@ -184,7 +181,6 @@ const AssistantChatbot = () => {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Input */}
             <div className="p-4 border-t border-primary-100 bg-slate-50/50">
               <div className="flex gap-2">
                 <input
